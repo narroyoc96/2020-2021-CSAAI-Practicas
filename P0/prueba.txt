@@ -1,0 +1,3 @@
+Esto es una prueba de creacion
+de un fichero de texto 
+en VSCode..
