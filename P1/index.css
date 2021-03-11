@@ -3,6 +3,8 @@ body {
     border: solid;
     border-color: white;
     margin: 10px;
+    background-image: url("cementerio.jpg");
+    background-repeat: no-repeat; 
     color: black;
 }
 
@@ -12,7 +14,13 @@ legend {
     border-color: black;
     font-weight: bold;
     border-radius: 20px;
-    background-color: blue;
+    background-color: lightcyan;
 }
 
+h1 {
+    font-size: 30px;
+    color: black;
+    font-family: cursive;
+    text-align: center;
+  }
 
