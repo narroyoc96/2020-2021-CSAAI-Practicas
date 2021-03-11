@@ -3,10 +3,14 @@ body {
     border: solid;
     border-color: white;
     margin: 10px;
-    background-image: url("cementerio.jpg");
-    background-repeat: no-repeat; 
     color: black;
 }
+
+.centrado{
+    margin: 10px auto;
+    display: block;
+}
+
 
 legend {
     padding: 5px;
@@ -17,10 +21,22 @@ legend {
     background-color: lightcyan;
 }
 
+
 h1 {
     font-size: 30px;
     color: black;
     font-family: cursive;
     text-align: center;
-  }
+}
 
+h3 {
+    color: lightpink;
+    font-family: 'Homemade Apple', cursive;
+    margin-left: 20px;
+}
+
+h4 {
+    color: black;
+    font-family: 'Homemade Apple', cursive;
+    margin-left: 10px;
+}
