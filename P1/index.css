@@ -4,10 +4,11 @@ body {
     border-color: white;
     margin: 10px;
     color: black;
-    background-image: url(libros.jpg);
+    background-image: url(cementerio.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 
@@ -20,17 +21,18 @@ body {
 legend {
     padding: 5px;
     border: solid;
-    border-color: black;
+    border-color: white;
     font-weight: bold;
     border-radius: 20px;
     font-family: 'Times New Roman', Times, serif;
     background-color: lightcyan;
+    color: black;
 }
 
 
 h1 {
     font-size: 30px;
-    color: black;
+    color:white;
     font-family: cursive;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
