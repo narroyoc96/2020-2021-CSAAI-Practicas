@@ -4,7 +4,12 @@ body {
     border-color: white;
     margin: 10px;
     color: black;
+    background-image: url(libros.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 .centrado{
     margin: 5px auto;
