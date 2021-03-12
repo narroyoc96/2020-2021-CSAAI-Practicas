@@ -24,7 +24,7 @@ body {
 legend {
     padding: 5px;
     border: solid;
-    border-color: white;
+    border-color: black;
     font-weight: bold;
     border-radius: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -50,7 +50,7 @@ legend {
 
 h1 {
     font-size: 30px;
-    color:white;
+    color:black;
     font-family: cursive;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -58,6 +58,6 @@ h1 {
 
 p{
     font-size: 10px;
-    color:rgb(238, 65, 195);
+    color:lightskyblue;
     font-family: Arial, Helvetica, sans-serif;
 }
