@@ -7,9 +7,8 @@ const test1 = document.getElementById('test1')
 
 //-- Configurar el manejador para el evento de
 //-- pulsación de botón
-test.onclick = () => {
+test2.onclick = () => {
     console.log("Click sobre el párrafo...") //Notación más compacta pero igual que Ej7
-
 
     //-- cambiar su texto
     test1.innerHTML = "¡TEXTO CAMBIADO!"
