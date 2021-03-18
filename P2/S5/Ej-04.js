@@ -8,8 +8,7 @@ console.log("Ejecutando JS...");
 const gui = {
     display: document.getElementById("display"),
     boton_inc: document.getElementById("boton_inc"),
-    boton_dec: document.getElementById("boton_dec"),
-
+    boton_dec: document.getElementById("boton_dec")
 }
 const 
 
