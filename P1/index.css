@@ -75,3 +75,8 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: blueviolet;
 }
+
+/*Estilo viñeta*/
+.viñeta{
+    list-style-image: url(libro1.png);
+}
