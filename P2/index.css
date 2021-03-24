@@ -1,0 +1,10 @@
+/*Estilo calculadora*/
+.calculadora {
+    display: block;
+    margin: 0 auto; /*centrar la calculadora en el centro*/
+    padding: 20px;
+    background-color: lightblue;
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
+}
