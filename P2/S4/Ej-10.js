@@ -14,6 +14,6 @@ test.onclick = () => {
     }
     //-- Si ya tiene color se lo quitamos
     else {
-        test.style.backgroundColor = ";"
+        test.style.backgroundColor = "";
     }
 }
