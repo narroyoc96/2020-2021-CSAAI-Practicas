@@ -1,3 +1,8 @@
+/*Estilo cuerpo*/
+body {
+    background-color: gray;
+}
+
 /*Estilo calculadora*/
 .calculadora {
     display: block;
@@ -12,8 +17,8 @@
 /*Estilo botones*/
 .calculadora td button{
     display: block;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     font-size: 25px;
 }
 
