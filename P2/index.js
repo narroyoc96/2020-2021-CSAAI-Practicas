@@ -1,5 +1,6 @@
-
-console.log("Ejecutando JS...");
+function main() {
+    console.log("Ejecutando JS...");
+}
 
 //-- Identificadores
 display = document.getElementById("display")
