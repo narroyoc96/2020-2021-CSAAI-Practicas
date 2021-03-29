@@ -8,6 +8,7 @@ calculos = document.getElementsByClassName('operacion')
 punto = document.getElementById("punto")
 del= document.getElementById('del')
 porcentaje = document.getElementById('porcentaje')
+raiz = document.getElementById('raiz')
 
 for(i=0; i<numeros.length; i++){
   numeros[i].onclick = (ev) =>{
@@ -53,4 +54,9 @@ del.onclick = () => {
 //-- Calcular porcentaje en la expresion
 porcentaje.onclick = () => {
     display.innerHTML = (display.innerHTML/100);
+}
+
+//-- Calcular raiz cuadrada en la expresion
+raiz.onclick = () => {
+    display.innerHTML = Math.sqrt(display.innerHTML);
   }
