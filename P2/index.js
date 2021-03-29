@@ -5,6 +5,7 @@ igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 numeros = document.getElementsByClassName('numero')
 calculos = document.getElementsByClassName('operacion')
+punto = document.getElementById("punto")
 
 for(i=0; i<numeros.length; i++){
   numeros[i].onclick = (ev) =>{
@@ -36,3 +37,7 @@ igual.onclick = () => {
 clear.onclick = () => {
   display.innerHTML = "0";
 }
+
+//-- Poner punto en la expresion
+punto.onclick = () =>{
+    display.innerHTML += punto.value;
