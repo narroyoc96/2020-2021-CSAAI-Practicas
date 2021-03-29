@@ -1,27 +1,46 @@
 console.log("Ejecutando JS...");
 
+//-- Identificadores
 display = document.getElementById("display")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
-numeros = document.getElementsByClassName('numero')
-calculos = document.getElementsByClassName('operacion')
 punto = document.getElementById("punto")
 del= document.getElementById('del')
 porcentaje = document.getElementById('porcentaje')
 raiz = document.getElementById('raiz')
 ans = document.getElementById('ans')
 
+//-- Array elementos de la diferente clase
+let numeros = document.getElementsByClassName('numero')
+let calculos = document.getElementsByClassName('operacion')
+
+//-- Estados
+const ESTADO = {
+    INIT: 0,
+    OP1: 1,
+    OPERATION: 2,
+    OP2: 3,
+    COMA: false,
+}
+
+//-- Variable estado
+let estado = ESTADO.INIT;
+
+//-- Recorre todo el array de los numeros ( 0 al 9)
 for(i=0; i<numeros.length; i++){
   numeros[i].onclick = (ev) =>{
     digito(ev.target);
   }
 }
+
 for(i=0; i<calculos.length; i++){
   calculos[i].onclick = (ev) =>{
     display.innerHTML += ev.target.value;
   }
 }
 
+//-- Funcion que sirve para cuando se introduce
+//-- un numero se elimine el 0 del display
 function digito(boton)
 {
   if (display.innerHTML == "0"){
@@ -30,7 +49,6 @@ function digito(boton)
     display.innerHTML += boton.value;
   }
 }
-
 
 //-- Evaluar la expresion
 igual.onclick = () => {
