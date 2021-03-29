@@ -1,7 +1,6 @@
 console.log("Ejecutando JS...");
 
 display = document.getElementById("display")
-suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 numeros = document.getElementsByClassName('numero')
