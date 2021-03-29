@@ -41,3 +41,4 @@ clear.onclick = () => {
 //-- Poner punto en la expresion
 punto.onclick = () =>{
     display.innerHTML += punto.value;
+}
