@@ -6,6 +6,7 @@ clear = document.getElementById("clear")
 numeros = document.getElementsByClassName('numero')
 calculos = document.getElementsByClassName('operacion')
 punto = document.getElementById("punto")
+del= document.getElementById('del')
 
 for(i=0; i<numeros.length; i++){
   numeros[i].onclick = (ev) =>{
@@ -41,4 +42,9 @@ clear.onclick = () => {
 //-- Poner punto en la expresion
 punto.onclick = () =>{
     display.innerHTML += punto.value;
+}
+
+//-- Eliminar un digito en la expresion
+del.onclick = () => {
+    display.innerHTML = display.innerHTML.slice(0,-1);
 }
