@@ -7,6 +7,7 @@ numeros = document.getElementsByClassName('numero')
 calculos = document.getElementsByClassName('operacion')
 punto = document.getElementById("punto")
 del= document.getElementById('del')
+porcentaje = document.getElementById('porcentaje')
 
 for(i=0; i<numeros.length; i++){
   numeros[i].onclick = (ev) =>{
@@ -48,3 +49,8 @@ punto.onclick = () =>{
 del.onclick = () => {
     display.innerHTML = display.innerHTML.slice(0,-1);
 }
+
+//-- Calcular porcentaje en la expresion
+porcentaje.onclick = () => {
+    display.innerHTML = (display.innerHTML/100);
+  }
