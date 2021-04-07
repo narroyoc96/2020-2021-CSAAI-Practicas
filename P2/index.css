@@ -29,3 +29,21 @@ button{
     font-family: 'Chakra Petch', sans-serif;
     border-radius: 5px 5px 5px 5px;
 }
+
+/*Estilo display*/
+p {
+    background-color: white;
+    color: black;
+    text-align: right;
+    font-size: 55px;
+    width: 300px;
+    height: 100px;
+    border-color: grey;
+    border-style: ridge;
+    font-family: 'Chakra Petch', sans-serif;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip clip;
+}
