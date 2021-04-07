@@ -17,4 +17,15 @@ body {
     height: 600px;
 }
 
-
+/*Estilo botones*/
+button{
+    width: 40px;
+    height: 40px;
+    background-color:white;
+    color:black;
+    font-weight: bold;
+    border-color: grey;
+    border-style: ridge;
+    font-family: 'Chakra Petch', sans-serif;
+    border-radius: 5px 5px 5px 5px;
+}
