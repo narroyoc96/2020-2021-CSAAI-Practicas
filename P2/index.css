@@ -30,6 +30,7 @@ button{
     border-color: grey;
     border-style: ridge;
     border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*Estilo display*/
@@ -47,5 +48,7 @@ p {
     justify-content: space-between;
     word-break: break-all;
     box-shadow: 0px 0px 10px #000033; /*sombra*/
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/*Particularidades*/
