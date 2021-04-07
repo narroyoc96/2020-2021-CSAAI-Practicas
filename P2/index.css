@@ -18,21 +18,22 @@ button{
     width: 40px;
     height: 40px;
     cursor: pointer;
-    margin: 5px;
+    text-align: center;
+    margin: 5px; /*margen entre botones*/
     padding: 0;
     background-color:white;
     color:black;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em; /*tamaño letra dentro de botones*/
     border: none;
     border-color: grey;
     border-style: ridge;
-    border-radius: 32px;
+    border-radius: 10px;
 }
 
 /*Estilo display*/
 p {
-    grid-column: 1/-1;
+    grid-column: 1/-1; /*display de izquierda a derecha*/
     padding: 16px;
     display: flex;
     margin: 10px 10px 20px;
@@ -43,5 +44,6 @@ p {
     text-align: right;
     justify-content: space-between;
     word-break: break-all;
-    box-shadow: 0px 0px 10px #000033;
+    box-shadow: 0px 0px 10px #000033; /*sombra*/
 }
+
