@@ -5,47 +5,43 @@ body {
 
 /*Estilo Calculadora*/
 .calculadora{
-    padding-top: 20px;
-    padding-bottom: 23px;
     background-color: lightskyblue;
-    border-radius: 20px 20px 20px 20px;
-    text-align: center;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 500px;
-    height: 600px;
+    padding: 15px;
+    border-radius: 32px;
+    box-shadow: 15px 10px 0px 5px black33;
+    grid-template-columns: repeat(5, 75px);
+    grid-template-rows: 160px repeat(6, 75px);
 }
 
 /*Estilo botones*/
 button{
     width: 40px;
     height: 40px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
     background-color:white;
     color:black;
     font-weight: bold;
+    font-size: 1.5em;
+    border: none;
     border-color: grey;
     border-style: ridge;
-    font-family: 'Chakra Petch', sans-serif;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 32px;
 }
 
 /*Estilo display*/
 p {
-    background-color: white;
-    color: black;
+    grid-column: 1/-1;
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: gray;
+    border-radius: 32px;
     text-align: right;
-    font-size: 55px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 450px;
-    height: 100px;
-    border-color: grey;
-    border-style: ridge;
-    font-family: 'Chakra Petch', sans-serif;
-    border-radius: 5px 5px 5px 5px;
-    margin-left: 30px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip clip;
+    justify-content: space-between;
+    word-break: break-all;
+    box-shadow: 0px 0px 10px #000033;
 }
