@@ -10,7 +10,7 @@ const gui = {
     boton_inc: document.getElementById("boton_inc"),
     boton_dec: document.getElementById("boton_dec")
 }
-const 
+
 
 //-- Objeto contador: Contiene el valor y el método para incrementarse
 const counter = {
