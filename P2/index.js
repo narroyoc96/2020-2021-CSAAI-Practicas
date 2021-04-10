@@ -63,8 +63,3 @@ porcentaje.onclick = () => {
 raiz.onclick = () => {
     display.innerHTML = Math.sqrt(display.innerHTML);
 }
-
-//-- Volver al ultimo resultado
-ans.onclick = () => {
-    display.innerHTML += ans.value;
-}
