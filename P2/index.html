@@ -8,48 +8,49 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
 </head>
-<body> 
-    <table class="calculadora">
-        <tr>
-            <td colspan="5"><p id="display">0</p></td>
-        </tr>
-        <tr>
-            <td><button class="operacion" value="(">(</button></td>
-            <td><button class="operacion" value=")">)</button></td>
-            <td><button id="porcentaje">%</button></td>
-            <td><button id = "del">DEL</button></td>
-            <td><button id="clear">AC</button></td>
-        </tr>
-        <tr>
-            <td><button class="numero" value="7">7</button></td>
-            <td><button class="numero" value="8">8</button></td>
-            <td><button class="numero" value="9">9</button></td>
-            <td><button class = "operacion" value="**">^</button></td>
-            <td><button id = "raiz">√</button></td>
+<body>
+    <div class="calculadora">
+        <p id="display">0</p>
+        <div class="teclado">
+            <div class="linea1">
+                <button class="operacion" value="(">(</button>
+                <button class="operacion" value=")">)</button>
+                <button id="porcentaje">%</button>
+                <button id = "del">DEL</button>
+                <button id="clear">AC</button>
+            </div>
 
+            <div class="linea2">
+                <button class="numero" value="7">7</button>
+                <button class="numero" value="8">8</button>
+                <button class="numero" value="9">9</button>
+                <button class = "operacion" value="**">^</button>
+                <button id = "raiz">√</button>
+            </div>
 
-        </tr>
-        <tr>
-            <td><button class="numero" value="4">4</button></td>
-            <td><button class="numero" value="5">5</button></td>
-            <td><button class="numero" value="6">6</button></td>
-            <td><button class="operacion" value="*">*</button></td>
-            <td><button class="operacion" value="/">/</button></td>
-        </tr>
-        <tr>
-            <td><button class="numero" value="1">1</button></td>
-            <td><button class="numero" value="2">2</button></td>
-            <td><button class="numero" value="3">3</button></td>
-            <td><button class="operacion" value="+">+</button></td>
-            <td><button class="operacion" value="-">-</button></td>
+            <div class="linea3">
+                <button class="numero" value="4">4</button>
+                <button class="numero" value="5">5</button>
+                <button class="numero" value="6">6</button>
+                <button class="operacion" value="*">*</button>
+                <button class="operacion" value="/">/</button>
+            </div>
 
-        </tr>
-        <tr>
-            <td><button id="punto" value=".">.</button></td>
-            <td><button class="numero" value="0">0</button></td>
-            <td><button class = "numero" value = "3.1416">π</button></td>
-            <td colspan="2"><button class="igual">=</button></td>
-        </tr>
-    </table>
+            <div class="linea4">
+                <button class="numero" value="1">1</button>
+                <button class="numero" value="2">2</button>
+                <button class="numero" value="3">3</button>
+                <button class="operacion" value="+">+</button>
+                <button class="operacion" value="-">-</button>
+            </div>
+
+            <div class="linea5">
+                <button id="punto" value=".">.</button>
+                <button class="numero" value="0">0</button>
+                <button class = "numero" value = "3.1416">π</button>
+                <button class="igual">=</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
