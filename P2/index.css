@@ -55,3 +55,6 @@ p {
 }
 
 /*Particularidades*/
+.igual {
+    grid-column: span 2;
+}
