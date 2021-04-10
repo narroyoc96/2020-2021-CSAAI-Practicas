@@ -15,6 +15,10 @@ body {
     box-shadow: 15px 10px 0px 5px black33;
     grid-template-columns: repeat(5, 75px);
     grid-template-rows: 160px repeat(6, 75px);
+    display: block;
+    margin: auto;
+    width: 270px;
+    height: 340px;
 }
 
 /*Estilo botones*/
@@ -38,7 +42,8 @@ button{
 
 /*Estilo display*/
 p {
-    grid-column: 1/-1; /*display de izquierda a derecha*/
+    width: 220px;
+    height: 40px;
     padding: 16px;
     display: flex;
     margin: 10px 10px 20px;
@@ -56,7 +61,6 @@ p {
 
 /*Particularidades*/
 .igual {
-    grid-column: span 2;
     width: 90px;
     height: 40px;
 }
