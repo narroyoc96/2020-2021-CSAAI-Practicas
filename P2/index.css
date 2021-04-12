@@ -37,7 +37,7 @@ button{
     border-color: grey;
     border-style: ridge;
     border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Orbitron', bol
 }
 
 /*Estilo display*/
@@ -55,11 +55,8 @@ p {
     border-style: ridge;
     border-radius: 10px;
     font-size: 2.5em;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    justify-content: space-between;
-    word-break: break-all;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Orbitron', bol;
+    text-align: right;
 }
 
 /*Particularidades*/
