@@ -21,7 +21,7 @@ let estado = ESTADO.INIT; //Variable estado
 let numeros = document.getElementsByClassName('numero');
 for(i=0; i<numeros.length; i++){
   numeros[i].onclick = (ev) =>{
-    digito(ev.target).value; //
+    digito(ev.target.value); //
   }
 }
 
