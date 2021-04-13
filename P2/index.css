@@ -11,7 +11,7 @@ body {
     background-color: lightskyblue;
     padding: 15px;
     border-radius: 20px;
-    border-color: grey;
+    border-color:blanchedalmond;
     box-shadow: 15px 10px 0px 5px black33;
     grid-template-columns: repeat(5, 75px);
     grid-template-rows: 160px repeat(6, 75px);
@@ -34,7 +34,7 @@ button{
     font-weight: bold;
     font-size: 1em; /*tamaño letra dentro de botones*/
     border: none;
-    border-color: grey;
+    border-color: rgb(51, 100, 235);
     border-style: ridge;
     border-radius: 10px;
     font-family: 'Orbitron', bol
@@ -51,7 +51,7 @@ p {
     align-items: flex-end;
     background-color: whitesmoke;
     border: none;
-    border-color: grey;
+    border-color: rgb(51, 100, 235);
     border-style: ridge;
     border-radius: 10px;
     font-size: 2em;
@@ -63,4 +63,13 @@ p {
 #igual {
     width: 93px;
     height: 40px;
+    background-color: rgb(51, 100, 235);
+    color: blanchedalmond;
+    border-color:blanchedalmond;
+}
+
+#clear {
+    background-color: rgb(51, 100, 235);
+    color: blanchedalmond;
+    border-color:blanchedalmond;
 }
