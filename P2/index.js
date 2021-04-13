@@ -36,7 +36,6 @@ for(i=0; i<calculos.length; i++){
   }
 }
 
-
 function digito(boton)
 {
   if(estado == ESTADO.INIT){
