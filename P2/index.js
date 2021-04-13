@@ -51,6 +51,7 @@ function digito(boton)
       console.log(estado);
     }
   }
+  sonido_teclas.play();
 }
 
 //-- Evaluar la expresion
@@ -62,6 +63,7 @@ igual.onclick = () => {
     ESTADO.PUNTO = false;
     console.log(estado,"igual");
   }
+  sonido_teclas.play();
 }
 
 //-- Poner a cero la expresion
@@ -70,6 +72,7 @@ clear.onclick = (ev) => {
   estado = ESTADO.INIT;
   ESTADO.PUNTO = false;
   console.log(estado,"clear");
+  sonido_teclas.play();
 }
 
 //-- Poner punto en la expresion
@@ -80,19 +83,23 @@ punto.onclick = (ev) =>{
     display.innerHTML += ev.target.value;
     ESTADO.PUNTO = true;
   }
+  sonido_teclas.play();
 }
 
 //-- Eliminar un digito en la expresion
 del.onclick = () => {
-    display.innerHTML = display.innerHTML.slice(0,-1);
+  display.innerHTML = display.innerHTML.slice(0,-1);
+  sonido_teclas.play();
 }
 
 //-- Calcular porcentaje en la expresion
 porcentaje.onclick = () => {
-    display.innerHTML = (display.innerHTML/100);
+  display.innerHTML = (display.innerHTML/100);
+  sonido_teclas.play();
 }
 
 //-- Calcular raiz cuadrada en la expresion
 raiz.onclick = () => {
-    display.innerHTML = Math.sqrt(display.innerHTML);
+  display.innerHTML = Math.sqrt(display.innerHTML);
+  sonido_teclas.play();
 }
