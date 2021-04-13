@@ -7,46 +7,79 @@ punto = document.getElementById("punto")
 del= document.getElementById('del')
 porcentaje = document.getElementById('porcentaje')
 raiz = document.getElementById('raiz')
-ans = document.getElementById('ans')
 
-numeros = document.getElementsByClassName('numero')
-calculos = document.getElementsByClassName('operacion')
+const ESTADO = {
+  INIT: 0,
+  OP1: 1,
+  OPERATION: 2,
+  OP2: 3,
+  PUNTO: false,
+}
 
+let estado = ESTADO.INIT; //Variable estado
 
+let numeros = document.getElementsByClassName('numero');
 for(i=0; i<numeros.length; i++){
   numeros[i].onclick = (ev) =>{
-    digito(ev.target);
+    digito(ev.target).value; //
   }
 }
 
+let calculos = document.getElementsByClassName('operacion')
 for(i=0; i<calculos.length; i++){
   calculos[i].onclick = (ev) =>{
-    display.innerHTML += ev.target.value;
+    if(estado == ESTADO.OP1){
+      display.innerHTML += ev.target.value;
+      estado = ESTADO.OPERATION;
+      console.log(estado, "opera")
+    }
   }
 }
+
 
 function digito(boton)
 {
-  if (display.innerHTML == "0"){
-    display.innerHTML = boton.value;
-  } else{
-    display.innerHTML += boton.value;
+  if(estado == ESTADO.INIT){
+    display.innerHTML = boton;
+    estado = ESTADO.OP1;
+    console.log(estado, "digito");
+  } else if (estado == ESTADO.OP1 || estado == ESTADO.OP2 || estado == ESTADO.OPERATION){
+    display.innerHTML += boton;
+    console.log(estado, "digito");
+    if (estado == ESTADO.OPERATION){
+      estado = ESTADO.OP2;
+      console.log(estado);
+    }
   }
 }
 
 //-- Evaluar la expresion
 igual.onclick = () => {
-  display.innerHTML = eval(display.innerHTML);
+  console.log(estado);
+  if(estado == ESTADO.OP2){
+    display.innerHTML = eval(display.innerHTML);
+    estado = ESTADO.OP1;
+    ESTADO.PUNTO = false;
+    console.log(estado,"igual");
+  }
 }
 
 //-- Poner a cero la expresion
-clear.onclick = () => {
+clear.onclick = (ev) => {
   display.innerHTML = "0";
+  estado = ESTADO.INIT;
+  ESTADO.PUNTO = false;
+  console.log(estado,"clear");
 }
 
 //-- Poner punto en la expresion
-punto.onclick = () =>{
-    display.innerHTML += punto.value;
+punto.onclick = (ev) =>{
+  if (ESTADO.PUNTO){
+    console.log("No introduzca dos puntos seguidos, no se puede");
+  } else {
+    display.innerHTML += ev.target.value;
+    ESTADO.PUNTO = true;
+  }
 }
 
 //-- Eliminar un digito en la expresion
