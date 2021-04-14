@@ -4,7 +4,7 @@
 
 Puedes acceder a ella a través del siguiente enlace: https://narroyoc96.github.io/2020-2021-CSAAI-Practicas/P2/
 
-    *NOTA: Para el correcto funcionamiento te recomiendo que uses como navegador Chrome o Firefox.
+    *NOTA: Para el correcto funcionamiento te recomiendo que uses como navegador Firefox (o Chrome)
 
 USOS CALCULADORA (ESPECIFICACIONES):
 
