@@ -22,7 +22,7 @@ USOS CALCULADORA (MEJORAS):
 2. He incluido sonido a las teclas. *OJO*: Acuerdate de desactivar o bajar el volumen del dispositivo que estés usando.
 
 
-¡Espero que te sea útil! 
+¡Espero que te sea útil!
 
 
 
