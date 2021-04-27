@@ -20,6 +20,8 @@ var brickPadding = 10; //hueco para que no se toquen entre ladrillos
 var brickOffsetTop = 30; //margen superior
 var brickOffsetLeft = 30; //margen izquierdo
 
+var score = 0; //contador
+
 //ladrillos guardados en una matriz
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
@@ -96,10 +98,22 @@ function collisionDetection() {
                 if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
                     dy = -dy;
                     b.status = 0;
+                    score++;
+                    if(score == brickRowCount*brickColumnCount) {
+                        alert("YOU WIN, CONGRATULATIONS!!");
+                        document,location.reload(); //la funcion vuelve a cargar la pagina y el juego empieza de nuevo
+                    }
                 }
             }
         }
     }
+}
+
+//funcion para el contador
+function drawScore(){
+    ctx.font = "12px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Puntos:"+score, 8, 20);
 }
 
 //funcion para dibujar dentro del canvas
@@ -108,6 +122,7 @@ function draw() {
     drawBricks();
     drawBall();
     drawPaddle();
+    drawScore();
     collisionDetection();
     
     //condiciones para que la bola se quede dentro del canvas
