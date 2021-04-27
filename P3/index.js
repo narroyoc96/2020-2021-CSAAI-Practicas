@@ -12,10 +12,10 @@ var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
 var rightPressed = false; //boton derecho
 var leftPressed = false; //boton izquierdo
 
-var brickRowCount = 3; //numero de filas ladrillos
-var brickColumnCount = 5; //numero de columnas ladrillos
-var brickWidth = 75; //ancho ladrillo
-var brickHeight = 20; //altura ladrillo
+var brickRowCount = 5; //numero de filas ladrillos
+var brickColumnCount = 9; //numero de columnas ladrillos
+var brickWidth = 50; //ancho ladrillo
+var brickHeight = 10; //altura ladrillo
 var brickPadding = 10; //hueco para que no se toquen entre ladrillos
 var brickOffsetTop = 30; //margen superior
 var brickOffsetLeft = 30; //margen izquierdo
