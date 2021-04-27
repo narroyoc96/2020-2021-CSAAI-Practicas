@@ -84,6 +84,18 @@ function drawBricks() {
         }
     }
 }
+
+//funcion para detectar colisiones entre bola y ladrillos
+function collisionDetection() {
+    for(c=0; c<brickColumnCount; c++){
+        for(r=0; r<brickRowCount; r++) {
+            var b = bricks[c][r]; //b almacena el objeto ladrillo en cada vuelta del bucle
+            if(x > b.x && x <b.x+brickWidth && y> b.y && y < b.y+brickHeight){
+                dy = -dy;
+            }
+        }
+    }
+}
 //funcion para dibujar dentro del canvas
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
