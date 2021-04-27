@@ -21,6 +21,7 @@ var brickOffsetTop = 30; //margen superior
 var brickOffsetLeft = 30; //margen izquierdo
 
 var score = 0; //contador
+var lives = 3; //vidas jugador
 
 //ladrillos guardados en una matriz
 var bricks = [];
@@ -116,6 +117,12 @@ function drawScore(){
     ctx.fillText("Puntos:"+score, 8, 20);
 }
 
+//funcion vidas jugador
+function drawLives() {
+    ctx.font = "12px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText("Vidas:"+lives, canvas.width-60, 20);
+}
 //funcion para dibujar dentro del canvas
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -123,6 +130,7 @@ function draw() {
     drawBall();
     drawPaddle();
     drawScore();
+    drawLives();
     collisionDetection();
     
     //condiciones para que la bola se quede dentro del canvas
@@ -136,8 +144,18 @@ function draw() {
             dy = -dy;
         }
         else {
+            lives--;
+            if(!lives) {
             alert("GAME OVER");
             document.location.reload();
+            }
+            else {
+                x = canvas.width/2;
+                y = canvas.height-30;
+                dx = 3;
+                dy = -3;
+                paddleX = (canvas.width-paddleWidth)/2;
+            }
         }
     }
     
