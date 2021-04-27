@@ -9,6 +9,12 @@ var dy = -2;
 
 var ballRadius = 10; //mantiene el radio del circulo dibujado
 
+//variables para crear la pala que golpea la bola
+var paddleHeight = 10; //altura
+var paddleWidth = 75; //anchura
+var paddleX = (cancas.width-paddleWidth)/2; //posicion
+
+//funcion que dibuja la bola
 function drawBall () {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -17,6 +23,16 @@ function drawBall () {
     ctx.closePath();
 }
 
+//funcion que dibuja la pala
+function drawPaddle() {
+    ctx.beginPath();
+    ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+
+//funcion para dibujar dentro del canvas
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); //borra el rastro que deja la bola
     drawBall();
