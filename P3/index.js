@@ -5,11 +5,29 @@ var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
+
 var paddleHeight = 10; //altura pala
 var paddleWidth = 75; //anchura pala
 var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
 var rightPressed = false; //boton derecho
 var leftPressed = false; //boton izquierdo
+
+var brickRowCount = 3; //numero de filas ladrillos
+var brickColumnCount = 5; //numero de columnas ladrillos
+var brickWidth = 75; //ancho ladrillo
+var brickHeight = 20; //altura ladrillo
+var brickpadding = 10; //hueco para que no se toquen entre ladrillos
+var brickOffsetTop = 30; //margen superior
+var brickOffsetLeft = 30; //margen izquierdo
+
+//ladrillos guardados en una matriz
+var bricks = [];
+for(c=0; c<brickColumnCount; c++) {
+    bricks[c] = [];
+    for(r=0; r<brickRowCount; r++) {
+        bricks[c][r] = {x: 0, y: 0};
+    }
+}
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -50,9 +68,25 @@ function drawPaddle() {
     ctx.closePath();
 }
 
+//funcion que dibuja los ladrillos
+function drawBricks() {
+    for(c=0; c<brickColumnCount; c++){
+        for(r=0; r<brickRowCount; r++) {
+            bricks[c][r].x = 0;
+            bricks[c][r].y = 0;
+            ctx.beginPath();
+            ctx.rect(0, 0, brickWidth, brickHeight);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+}
+
 //funcion para dibujar dentro del canvas
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBricks();
     drawBall();
     drawPaddle();
     
