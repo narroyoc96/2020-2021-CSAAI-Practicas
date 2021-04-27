@@ -64,8 +64,13 @@ function draw() {
     if(y + dy < ballRadius) {
         dy = -dy;
     } else if(y + dy > canvas.height-ballRadius) {
-        alert("GAME OVER");
-        document.location.reload();
+        if(x > paddleX && x < paddleX +paddleWidth) {
+            dy = -dy;
+        }
+        else {
+            alert("GAME OVER");
+            document.location.reload();
+        }
     }
     
     //condiciones para que la pala no se salga del canvas
