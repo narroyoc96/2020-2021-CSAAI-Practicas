@@ -16,7 +16,7 @@ var brickRowCount = 3; //numero de filas ladrillos
 var brickColumnCount = 5; //numero de columnas ladrillos
 var brickWidth = 75; //ancho ladrillo
 var brickHeight = 20; //altura ladrillo
-var brickpadding = 10; //hueco para que no se toquen entre ladrillos
+var brickPadding = 10; //hueco para que no se toquen entre ladrillos
 var brickOffsetTop = 30; //margen superior
 var brickOffsetLeft = 30; //margen izquierdo
 
@@ -25,7 +25,7 @@ var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
     for(r=0; r<brickRowCount; r++) {
-        bricks[c][r] = {x: 0, y: 0};
+        bricks[c][r] = { x: 0, y: 0 };
     }
 }
 
