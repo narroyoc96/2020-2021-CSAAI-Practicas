@@ -1,0 +1,10 @@
+
+* {padding: 0; margin: 0;}
+
+/*Estilo para el canvas*/
+#canvas {
+    background: rgb(83, 206, 255);
+    display: block;
+    margin: 0 auto;
+}
+
