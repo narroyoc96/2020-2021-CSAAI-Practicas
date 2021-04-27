@@ -3,7 +3,7 @@
 
 /*Estilo para el canvas*/
 #canvas {
-    background: rgb(83, 206, 255);
+    background:gray;
     display: block;
     margin: 0 auto;
 }
