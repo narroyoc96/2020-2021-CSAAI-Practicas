@@ -1,7 +1,7 @@
 # 2020-2021-CSAAI-Practicas
 Mis prácticas de la asignatura Construcción de Servicios y Aplicaciones Audiovisuales en Internet Curso 2020-2021
 
-* NOTA: Utiliza Firefox como navegador para visualizar correctamente todos mis trabajos :)
+    *NOTA: Utiliza Firefox como navegador para visualizar correctamente todos mis trabajos :)
 
 1. Curriculum Vitae: https://narroyoc96.github.io/2020-2021-CSAAI-Practicas/P1/
 
