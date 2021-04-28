@@ -10,6 +10,12 @@ var playing = false;
 var ballColor = 0;
 var ballColors = ["red", "pink", "blue"]
 
+var paddleHeight = 10; //altura pala
+var paddleWidth = 75; //anchura pala
+var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
+var rightPressed = false; //boton derecho
+var leftPressed = false; //boton izquierdo
+
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", ()=>{
     if(dx != 0 && dy != 0){
@@ -18,13 +24,9 @@ startButton.addEventListener("click", ()=>{
     playing = true;
     dx = 2;
     dy = -2;
+    y = canvas.height-30;
+    x = paddleX+paddleWidth/2;
 });
-
-var paddleHeight = 10; //altura pala
-var paddleWidth = 75; //anchura pala
-var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
-var rightPressed = false; //boton derecho
-var leftPressed = false; //boton izquierdo
 
 var brickRowCount = 5; //numero de filas ladrillos
 var brickColumnCount = 9; //numero de columnas ladrillos
@@ -67,6 +69,8 @@ function keyDownHandler(e) {
         playing = true;
         dx = 2;
         dy = -2;
+        y = canvas.height-30;
+        x = paddleX+paddleWidth/2;
     }
 }
 
