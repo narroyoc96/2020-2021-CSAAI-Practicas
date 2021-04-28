@@ -42,17 +42,18 @@ var brickOffsetLeft = 30; //margen izquierdo
 
 var score = 0; //contador
 var lives = 3; //vidas jugador
-var playing = false; //variable para saber si se esta jugando
-var startButton; //representa el boton
+var puntuationMax = 0; 
 
 //ladrillos guardados en una matriz
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
     bricks[c] = [];
     for(r=0; r<brickRowCount; r++) {
-         bricks[c][r] = { x: 0, y: 0, status: 1 };
+        bricks[c][r] = { x: 0, y: 0, status: 1, value: brickRowCount-r };
+        puntuationMax += brickRowCount-r;
     }
 }
+console.log(bricks);
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -138,8 +139,8 @@ function collisionDetection() {
                     ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
                     pongWalls.play(); 
                     b.status = 0;
-                    score++;
-                    if(score == brickRowCount*brickColumnCount) {
+                    score+=b.value;
+                    if(score == puntuationMax) {
                         alert("YOU WIN, CONGRATULATIONS!!");
                         document.location.reload(); //la funcion vuelve a cargar la pagina y el juego empieza de nuevo
                     }
