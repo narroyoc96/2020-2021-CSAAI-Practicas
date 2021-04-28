@@ -7,15 +7,16 @@ var dx = 0;
 var dy = 0;
 var playing = false;
 
+//variables bola cambia de color
 var ballColor = 0;
-var ballColors = ["red", "pink", "blue"]
+var ballColors = ["cyan", "#ff6347", "#ffff00", "#40e0d0", "#00ffff", "#ee82ee", "#ff7f50", "#ff69b4", "#808080"]
 
 var pongPaddle = new Audio ("P3_L9_pong-raqueta.mp3");
 var pongWalls = new Audio ("P3_L9_pong-rebote.mp3");
 var pongGoal = new Audio ("P3_L9_pong-tanto.mp3");
 
 var paddleHeight = 10; //altura pala
-var paddleWidth = 75; //anchura pala
+var paddleWidth = 70; //anchura pala
 var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
 var rightPressed = false; //boton derecho
 var leftPressed = false; //boton izquierdo
@@ -34,7 +35,7 @@ startButton.addEventListener("click", ()=>{
 
 var brickRowCount = 5; //numero de filas ladrillos
 var brickColumnCount = 9; //numero de columnas ladrillos
-var brickWidth = 50; //ancho ladrillo
+var brickWidth = 40; //ancho ladrillo
 var brickHeight = 10; //altura ladrillo
 var brickPadding = 10; //hueco para que no se toquen entre ladrillos
 var brickOffsetTop = 50; //margen superior
@@ -141,7 +142,7 @@ function collisionDetection() {
         for(r=0; r<brickRowCount; r++) {
             var b = bricks[c][r];
             if(b.status == 1) {
-                if(x+ballRadius > b.x && x + ballRadius < b.x+brickWidth && y + ballRadius > b.y && y + ballRadius < b.y+brickHeight) {
+                if(x+ballRadius > b.x && x+ballRadius < b.x+brickWidth && y+ballRadius > b.y && y+ballRadius < b.y+brickHeight) {
                     dy = -dy;
                     ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
                     pongWalls.play(); 
