@@ -9,7 +9,7 @@ var playing = false;
 
 //variables bola cambia de color
 var ballColor = 0;
-var ballColors = ["cyan", "#ff6347", "#ffff00", "#40e0d0", "#00ffff", "#ee82ee", "#ff7f50", "#ff69b4", "#808080"]
+var ballColors = ["cyan", "#ff6347", "#ffff00", "#40e0d0", "#00ffff", "#ee82ee", "#ff7f50", "#ff69b4", "#808080", "red", "blue", "yellow", "pink", "green", "purple"]
 
 //variables audio
 var pongPaddle = new Audio ("P3_L9_pong-raqueta.mp3");
@@ -22,6 +22,7 @@ var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
 var rightPressed = false; //boton derecho
 var leftPressed = false; //boton izquierdo
 
+//Boton START
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", ()=>{
     if(dx != 0 && dy != 0){
@@ -33,6 +34,9 @@ startButton.addEventListener("click", ()=>{
     y = canvas.height-30;
     x = paddleX+paddleWidth/2;
 });
+
+//Boton STOP
+var stopButton = document.getElementById("stop");
 
 var brickRowCount = 12; //numero de filas ladrillos
 var brickColumnCount = 9; //numero de columnas ladrillos
