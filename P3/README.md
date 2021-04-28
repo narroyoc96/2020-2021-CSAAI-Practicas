@@ -4,7 +4,7 @@
 
 Puedes acceder a el a través del siguiente enlace: https://narroyoc96.github.io/2020-2021-CSAAI-Practicas/P3/
 
-    *NOTA: Para el correcto funcionamiento te recomiendo que uses como navegador Firefox (o Chrome)
+    *NOTA: Para el correcto funcionamiento te recomiendo que uses como navegador Firefox (también puedes usar otro navegador pero el estilo está configurado para Firefox)
 
 USOS VIDEOJUEGO (ESPECIFICACIONES):
 
