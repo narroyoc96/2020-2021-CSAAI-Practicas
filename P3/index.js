@@ -7,6 +7,9 @@ var dx = 0;
 var dy = 0;
 var playing = false;
 
+var ballColor = 0;
+var ballColors = ["red", "pink", "blue"]
+
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", ()=>{
     if(dx != 0 && dy != 0){
@@ -83,7 +86,7 @@ function drawBall() {
     }
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = ballColors[ballColor];
     ctx.fill();
     ctx.closePath();
 }
@@ -124,6 +127,7 @@ function collisionDetection() {
             if(b.status == 1) {
                 if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
                     dy = -dy;
+                    ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0; 
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
@@ -163,12 +167,16 @@ function draw() {
     //condiciones para que la bola se quede dentro del canvas
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
+        ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
     }
     if(y + dy < ballRadius) {
         dy = -dy;
+        ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0; 
+
     } else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX +paddleWidth) {
             dy = -dy;
+            ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
         }
         else {
             lives--;
