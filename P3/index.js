@@ -37,12 +37,20 @@ var brickColumnCount = 9; //numero de columnas ladrillos
 var brickWidth = 50; //ancho ladrillo
 var brickHeight = 10; //altura ladrillo
 var brickPadding = 10; //hueco para que no se toquen entre ladrillos
-var brickOffsetTop = 30; //margen superior
+var brickOffsetTop = 50; //margen superior
 var brickOffsetLeft = 30; //margen izquierdo
 
-var score = 0; //contador
+var score = 0; //puntuacion
 var lives = 3; //vidas jugador
 var puntuationMax = 0; 
+
+//variables cpntador
+var segundos = 0;
+var minutos = 0;
+var horas = 0;
+var seconds = document.getElementById("segundos");
+var minutes = document.getElementById("minutos");
+var hours = document.getElementById("horas");
 
 //ladrillos guardados en una matriz
 var bricks = [];
@@ -67,7 +75,6 @@ function keyDownHandler(e) {
         leftPressed = true;
     }
     else if(e.keyCode == 32) {
-        console.log("hola");
         if(dx != 0 && dy != 0){
             return;
         }
@@ -150,26 +157,19 @@ function collisionDetection() {
     }
 }
 
-//funcion para el contador
+//funcion para la puntuacion
 function drawScore(){
-    ctx.font = "12px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText("Puntos:"+score, 8, 20);
+    ctx.font = "14px Arial";
+    ctx.fillStyle = "#c71585";
+    ctx.fillText("PUNTOS: "+score, 8, 20);
 }
 
 //funcion vidas jugador
 function drawLives() {
-    ctx.font = "12px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText("Vidas:"+lives, canvas.width-60, 20);
+    ctx.font = "14px Arial";
+    ctx.fillStyle = "#c71585";
+    ctx.fillText("VIDAS: "+lives, canvas.width-70, 20);
 }
-
-var segundos = 0;
-var minutos = 0;
-var horas = 0;
-var seconds = document.getElementById("segundos");
-var minutes = document.getElementById("minutos");
-var hours = document.getElementById("horas");
 
 //funcion cronometro juego
 function chrono(){
