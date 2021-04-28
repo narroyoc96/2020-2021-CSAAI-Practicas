@@ -1,10 +1,6 @@
 /*Estilo para el cuerpo*/
 body {
-    /*background-color: rgb(0, 63, 92);*/
-    background-image: url("cielo.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(0, 63, 92);
     margin-top: 100px;
 }
 
