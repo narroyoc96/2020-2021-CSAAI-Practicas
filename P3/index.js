@@ -3,8 +3,19 @@ var ctx = canvas.getContext("2d"); //guarda el contexto
 var ballRadius = 10; //mantiene el radio del circulo dibujado
 var x = canvas.width/2;
 var y = canvas.height-30;
-var dx = 2;
-var dy = -2;
+var dx = 0;
+var dy = 0;
+var playing = false;
+
+var startButton = document.getElementById("start");
+startButton.addEventListener("click", ()=>{
+    if(dx != 0 && dy != 0){
+        return;
+    }
+    playing = true;
+    dx = 2;
+    dy = -2;
+});
 
 var paddleHeight = 10; //altura pala
 var paddleWidth = 75; //anchura pala
@@ -22,6 +33,8 @@ var brickOffsetLeft = 30; //margen izquierdo
 
 var score = 0; //contador
 var lives = 3; //vidas jugador
+var playing = false; //variable para saber si se esta jugando
+var startButton; //representa el boton
 
 //ladrillos guardados en una matriz
 var bricks = [];
@@ -43,7 +56,17 @@ function keyDownHandler(e) {
     else if(e.keyCode == 37) { //tecla izquierda
         leftPressed = true;
     }
+    else if(e.keyCode == 32) {
+        console.log("hola");
+        if(dx != 0 && dy != 0){
+            return;
+        }
+        playing = true;
+        dx = 2;
+        dy = -2;
+    }
 }
+
 function keyUpHandler(e) {
     if(e.keyCode == 39) {
         rightPressed = false;
@@ -55,6 +78,9 @@ function keyUpHandler(e) {
 
 //funcion que dibuja la bola
 function drawBall() {
+    if (!playing){
+        return;
+    }
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
     ctx.fillStyle = "#0095DD";
@@ -123,6 +149,7 @@ function drawLives() {
     ctx.fillStyle = "#0095DD";
     ctx.fillText("Vidas:"+lives, canvas.width-60, 20);
 }
+
 //funcion para dibujar dentro del canvas
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -152,8 +179,9 @@ function draw() {
             else {
                 x = canvas.width/2;
                 y = canvas.height-30;
-                dx = 3;
-                dy = -3;
+                playing = false;
+                dx = 0;
+                dy = 0;
                 paddleX = (canvas.width-paddleWidth)/2;
             }
         }
