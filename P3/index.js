@@ -11,6 +11,7 @@ var playing = false;
 var ballColor = 0;
 var ballColors = ["cyan", "#ff6347", "#ffff00", "#40e0d0", "#00ffff", "#ee82ee", "#ff7f50", "#ff69b4", "#808080"]
 
+//variables audio
 var pongPaddle = new Audio ("P3_L9_pong-raqueta.mp3");
 var pongWalls = new Audio ("P3_L9_pong-rebote.mp3");
 var pongGoal = new Audio ("P3_L9_pong-tanto.mp3");
