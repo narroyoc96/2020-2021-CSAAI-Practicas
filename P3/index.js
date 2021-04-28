@@ -1,6 +1,6 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d"); //guarda el contexto
-var ballRadius = 10; //mantiene el radio del circulo dibujado
+var ballRadius = 5; //mantiene el radio del circulo dibujado
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 0;
@@ -129,7 +129,7 @@ function collisionDetection() {
         for(r=0; r<brickRowCount; r++) {
             var b = bricks[c][r];
             if(b.status == 1) {
-                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                if(x+ballRadius > b.x && x + ballRadius < b.x+brickWidth && y + ballRadius > b.y && y + ballRadius < b.y+brickHeight) {
                     dy = -dy;
                     ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0; 
                     b.status = 0;
@@ -158,6 +158,50 @@ function drawLives() {
     ctx.fillText("Vidas:"+lives, canvas.width-60, 20);
 }
 
+var segundos = 0;
+var minutos = 0;
+var horas = 0;
+var seconds = document.getElementById("segundos");
+var minutes = document.getElementById("minutos");
+var hours = document.getElementById("horas");
+
+//funcion cronometro juego
+function chrono(){
+    setInterval(() =>{
+        segundos++;
+        if(segundos < 10){
+            seconds.innerHTML="0"+segundos;
+
+        }else{
+            seconds.innerHTML=segundos;
+        }
+        if(segundos == 59){
+            segundos = -1;
+        }
+        if(segundos==0){
+            minutos++;
+        }
+        if(minutos < 10){
+            minutes.innerHTML="0"+minutos;
+
+        }else{
+            minutes.innerHTML=minutos;
+        }
+        if(minutos == 59){
+            minutos = -1;
+        }
+        if(minutos==0 && segundos==0){
+            horas++;
+        }
+        if(horas < 10){
+            hours.innerHTML="0"+horas;
+
+        }else{
+            hours.innerHTML=horas;
+        }
+
+    }, 1000)
+}
 //funcion para dibujar dentro del canvas
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -211,5 +255,9 @@ function draw() {
     y += dy;
     requestAnimationFrame(draw)
 }
+
+window.addEventListener("load", () => {
+    chrono();
+})
 
 draw();
