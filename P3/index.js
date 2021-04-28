@@ -10,6 +10,10 @@ var playing = false;
 var ballColor = 0;
 var ballColors = ["red", "pink", "blue"]
 
+var pongPaddle = new Audio ("P3_L9_pong-raqueta.mp3");
+var pongWalls = new Audio ("P3_L9_pong-rebote.mp3");
+var pongGoal = new Audio ("P3_L9_pong-tanto.mp3");
+
 var paddleHeight = 10; //altura pala
 var paddleWidth = 75; //anchura pala
 var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
@@ -131,12 +135,13 @@ function collisionDetection() {
             if(b.status == 1) {
                 if(x+ballRadius > b.x && x + ballRadius < b.x+brickWidth && y + ballRadius > b.y && y + ballRadius < b.y+brickHeight) {
                     dy = -dy;
-                    ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0; 
+                    ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
+                    pongWalls.play(); 
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         alert("YOU WIN, CONGRATULATIONS!!");
-                        document,location.reload(); //la funcion vuelve a cargar la pagina y el juego empieza de nuevo
+                        document.location.reload(); //la funcion vuelve a cargar la pagina y el juego empieza de nuevo
                     }
                 }
             }
@@ -216,18 +221,22 @@ function draw() {
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
         ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
+        pongWalls.play();
     }
     if(y + dy < ballRadius) {
         dy = -dy;
-        ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0; 
+        ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
+        pongWalls.play(); 
 
     } else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX +paddleWidth) {
             dy = -dy;
             ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
+            pongPaddle.play();
         }
         else {
             lives--;
+            pongGoal.play();
             if(!lives) {
             alert("GAME OVER");
             document.location.reload();
