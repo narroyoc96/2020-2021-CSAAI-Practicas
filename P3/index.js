@@ -34,7 +34,7 @@ startButton.addEventListener("click", ()=>{
     x = paddleX+paddleWidth/2;
 });
 
-var brickRowCount = 5; //numero de filas ladrillos
+var brickRowCount = 12; //numero de filas ladrillos
 var brickColumnCount = 9; //numero de columnas ladrillos
 var brickWidth = 40; //ancho ladrillo
 var brickHeight = 10; //altura ladrillo
