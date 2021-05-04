@@ -3,8 +3,8 @@ var ctx = canvas.getContext("2d"); //guarda el contexto
 var ballRadius = 5; //mantiene el radio del circulo dibujado
 var x = canvas.width/2;
 var y = canvas.height-30;
-var dx = 0;
-var dy = 0;
+var dx = 2;
+var dy = -2;
 var playing = false;
 
 //variables bola cambia de color
@@ -25,18 +25,19 @@ var leftPressed = false; //boton izquierdo
 //Boton START
 var startButton = document.getElementById("start");
 startButton.addEventListener("click", ()=>{
-    if(dx != 0 && dy != 0){
+    /*if(dx != 0 && dy != 0){
         return;
-    }
+    }*/
     playing = true;
-    dx = 2;
-    dy = -2;
-    y = canvas.height-30;
-    x = paddleX+paddleWidth/2;
+    /*y = canvas.height-30;
+    x = paddleX+paddleWidth/2;*/
 });
 
 //Boton STOP
 var stopButton = document.getElementById("stop");
+stopButton.addEventListener("click", ()=>{
+    playing = false;
+});
 
 var brickRowCount = 12; //numero de filas ladrillos
 var brickColumnCount = 9; //numero de columnas ladrillos
@@ -103,9 +104,7 @@ function keyUpHandler(e) {
 
 //funcion que dibuja la bola
 function drawBall() {
-    if (!playing){
-        return;
-    }
+
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
     ctx.fillStyle = ballColors[ballColor];
@@ -180,6 +179,10 @@ function drawLives() {
 //funcion cronometro juego
 function chrono(){
     setInterval(() =>{
+        if(!playing){
+            return;
+        }
+
         segundos++;
         if(segundos < 10){
             seconds.innerHTML="0"+segundos;
@@ -223,52 +226,55 @@ function draw() {
     drawScore();
     drawLives();
     collisionDetection();
-    
-    //condiciones para que la bola se quede dentro del canvas
-    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-        dx = -dx;
-        ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
-        pongWalls.play();
-    }
-    if(y + dy < ballRadius) {
-        dy = -dy;
-        ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
-        pongWalls.play(); 
 
-    } else if(y + dy > canvas.height-ballRadius) {
-        if(x > paddleX && x < paddleX +paddleWidth) {
+    if(playing){
+        //condiciones para que la bola se quede dentro del canvas
+        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+            dx = -dx;
+            ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
+            pongWalls.play();
+        }
+        if(y + dy < ballRadius) {
             dy = -dy;
             ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
-            pongPaddle.play();
-        }
-        else {
-            lives--;
-            pongGoal.play();
-            if(!lives) {
-            alert("GAME OVER");
-            document.location.reload();
+            pongWalls.play(); 
+
+        } else if(y + dy > canvas.height-ballRadius) {
+            if(x > paddleX && x < paddleX +paddleWidth) {
+                dy = -dy;
+                ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
+                pongPaddle.play();
             }
             else {
-                x = canvas.width/2;
-                y = canvas.height-30;
-                playing = false;
-                dx = 0;
-                dy = 0;
-                paddleX = (canvas.width-paddleWidth)/2;
+                lives--;
+                pongGoal.play();
+                if(!lives) {
+                alert("GAME OVER");
+                document.location.reload();
+                }
+                else {
+                    x = canvas.width/2;
+                    y = canvas.height-30;
+                    playing = false;
+                    dx= 2;
+                    dy = -2;
+                    paddleX = (canvas.width-paddleWidth)/2;
+                }
             }
         }
+        
+        //condiciones para que la pala no se salga del canvas
+        if(rightPressed && paddleX < canvas.width-paddleWidth) {
+            paddleX += 5;
+        }
+        else if(leftPressed && paddleX > 0) {
+            paddleX -= 5;
+        }
+        
+        x += dx;
+        y += dy;
     }
-    
-    //condiciones para que la pala no se salga del canvas
-    if(rightPressed && paddleX < canvas.width-paddleWidth) {
-        paddleX += 5;
-    }
-    else if(leftPressed && paddleX > 0) {
-        paddleX -= 5;
-    }
-    
-    x += dx;
-    y += dy;
+
     requestAnimationFrame(draw)
 }
 
