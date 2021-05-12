@@ -6,6 +6,9 @@ const img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
 //Botones
+const imagen1 = document.getElementById('imagen_1');
+const imagen2 = document.getElementById('imagen_2');
+const imagen3 = document.getElementById('imagen_3');
 const original = document.getElementById('original');
 const grises = document.getElementById('gris');
 const colores = document.getElementById('color');
@@ -25,6 +28,16 @@ const deslizador_G = document.getElementById('deslizador_G');
 const deslizador_B = document.getElementById('deslizador_B');
 const deslizador_gray = document.getElementById('deslizador_gray');
 
+//funcion para las diferentes imagenes
+imagen1.onclick = () => {
+    img.src="aldea.jpg";
+}
+imagen2.onclick = () => {
+    img.src="barcas.jpg";
+}
+imagen3.onclick = () => {
+    img.src="flores.jpg";
+}
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
