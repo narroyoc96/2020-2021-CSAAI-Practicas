@@ -6,6 +6,7 @@ const img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
 //Botones
+const original = document.getElementById('original');
 const grises = document.getElementById('gris');
 const colores = document.getElementById('color');
 const espejo = document.getElementById('espejo');
@@ -111,6 +112,11 @@ grises.onclick = () => {
   ctx.putImageData(imgData, 0, 0);
 }
 
+//boton imagen original
+original.onclick = () => {
+    console.log("Volver a la imagen original");
+    ctx.drawImage(img, 0, 0);
+}
 
 //boton colores
 colores.onclick = () => {
@@ -160,13 +166,15 @@ sepia.onclick = () => {
       var R = data[i* 4];
       var G = data[i*4 + 1];
       var B = data[i*4 + 2];
-  
-      //-- Hago sepia
+
+      //Sepia
       data[i*4] = (R * .393) + (G* .769) + (B * .189);
       data[i*4 +1] = (R * .349) + (G* .686) + (B * .168);
       data[i*4 +2] = (R * .272) + (G* .534) + (B * .131);
       }
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
-  }
+}
+
+
 console.log("Fin...");
