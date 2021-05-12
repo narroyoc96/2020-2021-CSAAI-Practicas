@@ -2,12 +2,35 @@ body {
     background-color:lemonchiffon;
 }
 
+#cuerpo{
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 100px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
 #izq{
     float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 10;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
 }
 
 #der{
     float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 10;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+#botones{
+    margin-left: 400px;    
 }
 
 button {
@@ -31,11 +54,18 @@ span{
     font-size: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-left: 550px;
     color: black;
 }
 
+#barra{
+    margin-left: 550px;
+
+}
 #range_value_R, #range_value_G, #range_value_B{
+
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    margin-left: 200px;
-  }
+    margin-left: 600px;
+}
+
