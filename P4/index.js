@@ -9,6 +9,7 @@ const ctx = canvas.getContext('2d');
 const grises = document.getElementById('gris');
 const colores = document.getElementById('color');
 const espejo = document.getElementById('espejo');
+const negativo = document.getElementById('negativo');
 
 //Valores deslizador
 const range_value_R = document.getElementById('range_value_R');
@@ -128,6 +129,24 @@ espejo.onclick =() => {
     ctx.translate(img.width,0);
     ctx.scale(-1,1);
     ctx.drawImage(img, 0, 0);
+}
+
+//boton negativo
+negativo.onclick = () =>{
+    ctx.drawImage(img, 0, 0);
+    //-- Obtener la imagen del canvas en pixeles
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    //-- Obtener el array con todos los píxeles
+    let data = imgData.data
+    for (let i = 0; i < data.length; i+=4){
+      var R = data[i];
+      var G = data[i+1];
+      var B = data[i+2];
+      data[i] = 255 - R;
+      data[i+1] = 255 - G;
+      data[i+2] = 255 - B;
+  }
+    ctx.putImageData(imgData, 0, 0);
 }
 
 console.log("Fin...");

@@ -1,3 +1,12 @@
 body {
-    background-color: grey;
-  }
+    background-color: palevioletred;
+}
+
+#izq{
+    float: left;
+}
+
+#der{
+    float: right;
+}
+
