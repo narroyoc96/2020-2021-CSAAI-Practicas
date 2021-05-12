@@ -49,23 +49,15 @@ button {
     font-style: italic;
 }
 
-span{
+#deslizadores{
+    font-size: 15px;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 550px;
+    font-style: bold;
     color: black;
-}
-
-#barra{
-    margin-left: 550px;
-
-}
-#range_value_R, #range_value_G, #range_value_B{
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    margin-left: 600px;
+    text-align: center;
+    column-count: 3;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
