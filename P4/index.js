@@ -7,7 +7,8 @@ const ctx = canvas.getContext('2d');
 
 //Botones
 const grises = document.getElementById('gris');
-const colores = document.getElementById('color')
+const colores = document.getElementById('color');
+const espejo = document.getElementById('espejo');
 
 //Valores deslizador
 const range_value_R = document.getElementById('range_value_R');
@@ -119,6 +120,14 @@ colores.onclick = () => {
     deslizador_B.value = 255;
     range_value_B.innerHTML = deslizador_B.value;
 
+}
+
+//boton espejo
+espejo.onclick =() => {
+    ctx.drawImage(img, 0,0);
+    ctx.translate(img.width,0);
+    ctx.scale(-1,1);
+    ctx.drawImage(img, 0, 0);
 }
 
 console.log("Fin...");
