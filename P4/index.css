@@ -16,8 +16,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 10;
     font-size: 20px;
-    font-style: italic;
+    font-style: normal;
     text-align: center;
+    color: rgb(28, 98, 160);
 }
 
 #der{
@@ -25,28 +26,32 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 10;
     font-size: 20px;
-    font-style: italic;
+    font-style: normal;
     text-align: center;
+    color: rgb(28, 98, 160);
+
 }
 
 #botones{
-    margin-left: 400px;    
+    margin-left: 450px;
+    margin-top: 250px;   
 }
 
 button {
     background-color: rgb(90, 90, 90);
     background-position: center;
-    color:plum;
-    border-radius: 6px;
+    color: rgb(125, 177, 224);
+    border-radius: 10px;
     border: 10px black;
     text-decoration: none;
     padding: 6px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px; /*relleno*/
+    padding-right: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 30;
     font-size: 20px;
-    font-style: italic;
+    font-style: normal;
+    
 }
 
 #deslizadores{
@@ -59,5 +64,13 @@ button {
     column-count: 3;
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
 }
 
+
+#range_value_R, #range_value_G, #range_value_B{
+    margin-right: 25px;
+}
