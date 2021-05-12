@@ -15,6 +15,7 @@ const colores = document.getElementById('color');
 const espejo = document.getElementById('espejo');
 const negativo = document.getElementById('negativo');
 const sepia = document.getElementById('sepia');
+const abajo = document.getElementById('abajo');
 
 //Valores deslizador
 const range_value_R = document.getElementById('range_value_R');
@@ -189,5 +190,12 @@ sepia.onclick = () => {
     ctx.putImageData(imgData, 0, 0);
 }
 
+//boton boca abajo
+abajo.onclick = () =>{
+    ctx.drawImage(img, 0,0);
+    ctx.translate(0,img.height);
+    ctx.scale(1,-1);
+    ctx.drawImage(img, 0, 0);
+}
 
 console.log("Fin...");
