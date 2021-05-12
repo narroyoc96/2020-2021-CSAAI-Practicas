@@ -10,6 +10,7 @@ const grises = document.getElementById('gris');
 const colores = document.getElementById('color');
 const espejo = document.getElementById('espejo');
 const negativo = document.getElementById('negativo');
+const sepia = document.getElementById('sepia');
 
 //Valores deslizador
 const range_value_R = document.getElementById('range_value_R');
@@ -149,4 +150,23 @@ negativo.onclick = () =>{
     ctx.putImageData(imgData, 0, 0);
 }
 
+//boton sepia
+sepia.onclick = () => {
+    //-- Obtener la imagen del canvas en pixeles
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    //-- Obtener el array con todos los píxeles
+    let data = imgData.data
+    for (var i = 0; i < data.length; i++) {
+      var R = data[i* 4];
+      var G = data[i*4 + 1];
+      var B = data[i*4 + 2];
+  
+      //-- Hago sepia
+      data[i*4] = (R * .393) + (G* .769) + (B * .189);
+      data[i*4 +1] = (R * .349) + (G* .686) + (B * .168);
+      data[i*4 +2] = (R * .272) + (G* .534) + (B * .131);
+      }
+    //-- Poner la imagen modificada en el canvas
+    ctx.putImageData(imgData, 0, 0);
+  }
 console.log("Fin...");
