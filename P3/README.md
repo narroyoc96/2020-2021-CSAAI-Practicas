@@ -28,4 +28,4 @@ USOS VIDEOJUEGO (MEJORAS):
 3. Este juego contiene un cronómetro, así sabrás cuanto tardas en eliminar todos los ladrillos.
 4. La bola cambia de color cada vez que rebota en la pared, la pala y en los diferentes ladrillos.
 
-¡Espero que te diviertas! 
+¡Espero que te diviertas! :)

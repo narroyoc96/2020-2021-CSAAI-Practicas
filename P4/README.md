@@ -22,4 +22,4 @@ USO IMAGEN MANIPULADA (MEJORAS):
     - BOCA ABAJO: La imagen original es invertida.
     - ORIGINAL: Este botón hace que se vuelva a la imagen original seleccionada sin ningún tipo de filtro.
 
-¡Y esto es todo! ¡Espero que te guste!
+¡Y esto es todo! ¡Espero que te guste! :)

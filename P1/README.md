@@ -10,7 +10,7 @@ En este curriculum, encontrarás toda la información sobre dicho autor. Además
 
 Si te gusta la novela negra, no dudes en leerte alguna de sus obras, será un acierto. Podrás comprar cualquiera de sus libros, con sólo un click en alguna de las plataformas situadas en la parte inferior de la página web.
 
-¡Espero que te guste!
+¡Espero que te guste! :)
 
 *Un lector vive mil vidas antes de morir. El que nunca lee solo vive una.*
 
