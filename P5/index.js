@@ -49,7 +49,22 @@ btn_src_on.onclick = () => {
 
 //-- Boton de FUENTES-OFF
 btn_src_off.onclick = () => {
-    directo.poster = TEST_IMAGE_URL;
+      //-- Establecer la fuente de la cámara 1
+  video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+  video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
+
+  //-- Reproducimos un vídeo, desde el comienzo
+  video1.currentTime = 0;
+  video1.any();
+  video2.currentTime = 0;
+  video2.any();
+
+  //-- Y en silencio...
+  video1.muted;
+  video2.muted;
+
+  //-- En la emisión en directo ponemos la imagen de prueba
+  directo.poster = TEST_IMAGE_URL;
 }
 
 //-- Botón de Test
