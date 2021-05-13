@@ -2,7 +2,7 @@
 
 ¡Hola! Este es mi Curriculum Vitae sobre el autor Carlos Ruiz Zafón.
 
-Puedes acceder a ella a través del siguiente enlace: https://narroyoc96.github.io/2020-2021-CSAAI-Practicas/P1/
+Puedes acceder a el a través del siguiente enlace: https://narroyoc96.github.io/2020-2021-CSAAI-Practicas/P1/
 
     *NOTA: Para el correcto funcionamiento te recomiendo que uses como navegador Firefox (o Chrome).
 
@@ -12,5 +12,5 @@ Si te gusta la novela negra, no dudes en leerte alguna de sus obras, será un ac
 
 ¡Espero que te guste!
 
-*Un lector vive mil vidas antes de morir. El que nunca lee solo vive una*
+*Un lector vive mil vidas antes de morir. El que nunca lee solo vive una.*
 
