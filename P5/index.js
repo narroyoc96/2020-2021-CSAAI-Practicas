@@ -8,6 +8,8 @@ const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
 
+let running = false;
+
 
 //-- Establecer las dimensiones de los vídeos
 directo.width=420;
@@ -28,6 +30,7 @@ video2.poster = TEST_IMAGE_URL;
 
 //-- Boton de FUENTES-ON
 btn_src_on.onclick = () => {
+    running = true;
  
   //-- Establecer la fuente de la cámara 1
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
@@ -40,8 +43,8 @@ btn_src_on.onclick = () => {
   video2.play();
 
   //-- Y en silencio...
-  video1.muted;
-  video2.muted;
+  video1.muted = true;
+  video2.muted = true;
 
   //-- En la emisión en directo ponemos la imagen de prueba
   directo.poster = TEST_IMAGE_URL;
@@ -49,32 +52,42 @@ btn_src_on.onclick = () => {
 
 //-- Boton de FUENTES-OFF
 btn_src_off.onclick = () => {
+    running = false;
+
       //-- Establecer la fuente de la cámara 1
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
   video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
 
   //-- Reproducimos un vídeo, desde el comienzo
   video1.currentTime = 0;
-  video1.any();
+  //video1.any();
   video2.currentTime = 0;
-  video2.any();
+  //video2.any();
+  directo.currentTime = 0;
+  //directo.any();
 
   //-- Y en silencio...
   video1.muted;
   video2.muted;
+  directo.muted;
 
   //-- En la emisión en directo ponemos la imagen de prueba
-  directo.poster = TEST_IMAGE_URL;
+ directo.poster = TEST_IMAGE_URL;
+ directo.src = '';
+
 }
 
 //-- Botón de Test
 btn_test.onclick = () => {
     directo.poster = TEST_IMAGE_URL;
-    directo.src = null;
+    directo.src = '';
 };
 
 //-- Botón de Selección de la cámara 1
 btn_video1.onclick = () => {
+    if (!running) {
+        return;
+    }
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
     directo.play();
@@ -83,6 +96,9 @@ btn_video1.onclick = () => {
 
 //-- Botón de Selección de la cámara 2
 btn_video2.onclick = () => {
+    if (!running) {
+        return;
+    }
     directo.src = video2.src;
     directo.currentTime = video2.currentTime;
     directo.play();
