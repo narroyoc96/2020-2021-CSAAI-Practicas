@@ -17,7 +17,7 @@ h2{
 }
 
 #video1{
-    margin-left: 500px;
+    margin-left: 380px;
     margin-top: 10px;
 }
 
@@ -39,7 +39,17 @@ input{
 }
 
 #btn_video1{
-    margin-left: 500px;
+    margin-left: 425px;
+    margin-top: 5px;
+}
+
+#btn_video2{
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+#btn_video3{
+    margin-left: 100px;
     margin-top: 10px;
 }
 
