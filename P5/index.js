@@ -6,6 +6,7 @@ const btn_video1 = document.getElementById("btn_video1");
 const btn_video2 = document.getElementById("btn_video2");
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
+const btn_src_off = document.getElementById("btn_src_off");
 
 
 //-- Establecer las dimensiones de los vídeos
@@ -17,7 +18,7 @@ video2.width=200;
 video2.height=100;
 
 //-- Imagen de Test usada
-const TEST_IMAGE_URL = "test.png";
+const TEST_IMAGE_URL = "tele.png";
 
 //-- Imagen estática a mostrar cuando el video no
 //-- ha arrancado
@@ -32,7 +33,7 @@ btn_src_on.onclick = () => {
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
   video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
 
-  //-- Reprodeucimos un vídeo, desde el comienzo
+  //-- Reproducimos un vídeo, desde el comienzo
   video1.currentTime = 0;
   video1.play();
   video2.currentTime = 0;
@@ -45,6 +46,11 @@ btn_src_on.onclick = () => {
   //-- En la emisión en directo ponemos la imagen de prueba
   directo.poster = TEST_IMAGE_URL;
 };
+
+//-- Boton de FUENTES-OFF
+btn_src_off.onclick = () => {
+    directo.poster = TEST_IMAGE_URL;
+}
 
 //-- Botón de Test
 btn_test.onclick = () => {
