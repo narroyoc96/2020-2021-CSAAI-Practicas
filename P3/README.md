@@ -1,4 +1,5 @@
- # Práctica 3
+ # Práctica 3: Videojuego retro.
+
 
 ¡Hola! Espero que mi versión del videojuego Breackout te ayude a pasar un buen rato y desconectar del trabajo.
 

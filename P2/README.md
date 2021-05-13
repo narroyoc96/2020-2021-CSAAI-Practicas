@@ -1,4 +1,4 @@
- # Práctica 2
+ # Práctica 2: Calculadora.
 
 ¡Hola! Espero que mi calculadora te ayude a realizar el cálculo que necesitas.
 
