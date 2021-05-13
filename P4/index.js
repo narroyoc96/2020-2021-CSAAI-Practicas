@@ -9,6 +9,7 @@ const ctx = canvas.getContext('2d');
 const imagen1 = document.getElementById('imagen_1');
 const imagen2 = document.getElementById('imagen_2');
 const imagen3 = document.getElementById('imagen_3');
+const imagen4 = document.getElementById('imagen_4');
 const original = document.getElementById('original');
 const grises = document.getElementById('gris');
 const colores = document.getElementById('color');
@@ -31,13 +32,16 @@ const deslizador_gray = document.getElementById('deslizador_gray');
 
 //funcion para las diferentes imagenes
 imagen1.onclick = () => {
-    img.src="aldea.jpg";
+    img.src="casa.jpg";
 }
 imagen2.onclick = () => {
     img.src="barcas.jpg";
 }
 imagen3.onclick = () => {
     img.src="flores.jpg";
+}
+imagen4.onclick = () => {
+  img.src="aldea.jpg";
 }
 
 //-- Función de retrollamada de imagen cargada
@@ -54,7 +58,6 @@ img.onload = function () {
   //-- Situar la imagen original en el canvas
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
-
   console.log("Imagen lista...");
 };
 
@@ -106,9 +109,23 @@ deslizador_B.oninput = () => {
   colors();
 }
 
+//funcion habilitar deslizadores
+function hab (){
+  deslizador_R.disabled = false;
+  deslizador_G.disabled = false;
+  deslizador_B.disabled = false;
+}
+
+//funcion deshabilitar deslizadores
+function des (){
+  deslizador_R.disabled = true;
+  deslizador_G.disabled = true;
+  deslizador_B.disabled = true;
+}
 
 //boton gris
 grises.onclick = () => {
+  des();
   //-- Obtener la imagen del canvas en pixeles
   let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   //-- Obtener el array con todos los píxeles
@@ -128,74 +145,81 @@ grises.onclick = () => {
 
 //boton imagen original
 original.onclick = () => {
-    console.log("Volver a la imagen original");
-    ctx.drawImage(img, 0, 0);
+  des();
+  console.log("Volver a la imagen original");
+  img.src = img.src;
+  ctx.drawImage(img, 0, 0);
 }
 
 //boton colores
 colores.onclick = () => {
-    ctx.drawImage(img, 0,0);
-    deslizador_R.value = 255;
-    range_value_R.innerHTML = deslizador_R.value;
-    deslizador_G.value = 255;
-    range_value_G.innerHTML = deslizador_G.value;
-    deslizador_B.value = 255;
-    range_value_B.innerHTML = deslizador_B.value;
+  hab();
+  ctx.drawImage(img, 0,0);
+  deslizador_R.value = 255;
+  range_value_R.innerHTML = deslizador_R.value;
+  deslizador_G.value = 255;
+  range_value_G.innerHTML = deslizador_G.value;
+  deslizador_B.value = 255;
+  range_value_B.innerHTML = deslizador_B.value;
 
 }
 
 //boton espejo
 espejo.onclick =() => {
-    ctx.drawImage(img, 0,0);
-    ctx.translate(img.width,0);
-    ctx.scale(-1,1);
-    ctx.drawImage(img, 0, 0);
+  des();
+  ctx.drawImage(img, 0,0);
+  ctx.translate(img.width,0);
+  ctx.scale(-1,1);
+  ctx.drawImage(img, 0, 0);
 }
 
 //boton negativo
 negativo.onclick = () =>{
-    ctx.drawImage(img, 0, 0);
-    //-- Obtener la imagen del canvas en pixeles
-    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    //-- Obtener el array con todos los píxeles
-    let data = imgData.data
-    for (let i = 0; i < data.length; i+=4){
-      var R = data[i];
-      var G = data[i+1];
-      var B = data[i+2];
-      data[i] = 255 - R;
-      data[i+1] = 255 - G;
-      data[i+2] = 255 - B;
+  des();
+  ctx.drawImage(img, 0, 0);
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data
+  for (let i = 0; i < data.length; i+=4){
+    var R = data[i];
+    var G = data[i+1];
+    var B = data[i+2];
+    data[i] = 255 - R;
+    data[i+1] = 255 - G;
+    data[i+2] = 255 - B;
   }
-    ctx.putImageData(imgData, 0, 0);
+  ctx.putImageData(imgData, 0, 0);
 }
 
 //boton sepia
 sepia.onclick = () => {
-    //-- Obtener la imagen del canvas en pixeles
-    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    //-- Obtener el array con todos los píxeles
-    let data = imgData.data
-    for (var i = 0; i < data.length; i++) {
-      var R = data[i* 4];
-      var G = data[i*4 + 1];
-      var B = data[i*4 + 2];
+  des();
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data
+  for (var i = 0; i < data.length; i++) {
+    var R = data[i* 4];
+    var G = data[i*4 + 1];
+    var B = data[i*4 + 2];
 
-      //Sepia
-      data[i*4] = (R * .393) + (G* .769) + (B * .189);
-      data[i*4 +1] = (R * .349) + (G* .686) + (B * .168);
-      data[i*4 +2] = (R * .272) + (G* .534) + (B * .131);
-      }
-    //-- Poner la imagen modificada en el canvas
-    ctx.putImageData(imgData, 0, 0);
+    //Sepia
+    data[i*4] = (R * .393) + (G* .769) + (B * .189);
+    data[i*4 +1] = (R * .349) + (G* .686) + (B * .168);
+    data[i*4 +2] = (R * .272) + (G* .534) + (B * .131);
+    }
+  //-- Poner la imagen modificada en el canvas
+  ctx.putImageData(imgData, 0, 0);
 }
 
 //boton boca abajo
 abajo.onclick = () =>{
-    ctx.drawImage(img, 0,0);
-    ctx.translate(0,img.height);
-    ctx.scale(1,-1);
-    ctx.drawImage(img, 0, 0);
+  des();
+  ctx.drawImage(img, 0,0);
+  ctx.translate(0,img.height);
+  ctx.scale(1,-1);
+  ctx.drawImage(img, 0, 0);
 }
 
 console.log("Fin...");
