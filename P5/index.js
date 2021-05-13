@@ -96,7 +96,7 @@ btn_video1.onclick = () => {
 
 //-- Botón de Selección de la cámara 2
 btn_video2.onclick = () => {
-    if (!running) {
+        if (!running) {
         return;
     }
     directo.src = video2.src;
