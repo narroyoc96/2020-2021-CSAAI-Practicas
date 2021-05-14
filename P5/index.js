@@ -71,29 +71,29 @@ btn_src_on.onclick = () => {
 btn_src_off.onclick = () => {
     running = false;
 
-      //-- Establecer la fuente de la cámara 1
-  video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
-  video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
-  video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
+    //-- Establecer la fuente de la cámara 1
+    video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+    video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
+    video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
 
-  //-- Reproducimos un vídeo, desde el comienzo
-  video1.currentTime = 0;
-  //video1.any();
-  video2.currentTime = 0;
-  //video2.any();
-  video3.currentTime = 0;
-  directo.currentTime = 0;
-  //directo.any();
+    //-- Reproducimos un vídeo, desde el comienzo
+    video1.currentTime = 0;
+    //video1.any();
+    video2.currentTime = 0;
+    //video2.any();
+    video3.currentTime = 0;
+    directo.currentTime = 0;
+    //directo.any();
 
-  //-- Y en silencio...
-  video1.muted;
-  video2.muted;
-  video3.muted;
-  directo.muted;
+    //-- Y en silencio...
+    video1.muted;
+    video2.muted;
+    video3.muted;
+    directo.muted;
 
-  //-- En la emisión en directo ponemos la imagen de prueba
- directo.poster = TEST_IMAGE_URL;
- directo.src = '';
+    //-- En la emisión en directo ponemos la imagen de prueba
+    directo.poster = TEST_IMAGE_URL;
+    directo.src = '';
 
 }
 
@@ -116,7 +116,7 @@ btn_video1.onclick = () => {
 
 //-- Botón de Selección de la cámara 2
 btn_video2.onclick = () => {
-        if (!running) {
+    if (!running) {
         return;
     }
     directo.src = video2.src;
@@ -129,7 +129,7 @@ btn_video2.onclick = () => {
 btn_video3.onclick = () => {
     if (!running) {
     return;
-}
+    }
     directo.src = video3.src;
     directo.currentTime = video3.currentTime;
     directo.play();
