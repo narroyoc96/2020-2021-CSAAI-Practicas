@@ -12,6 +12,14 @@ const btn_src_off = document.getElementById("btn_src_off");
 
 let running = false;
 
+//-- Variables cronómetro
+var segundos = 0;
+var minutos = 0;
+var horas = 0;
+var seconds = document.getElementById("segundos");
+var minutes = document.getElementById("minutos");
+var hours = document.getElementById("horas");
+
 
 //-- Establecer las dimensiones de los vídeos
 directo.width=420;
@@ -127,3 +135,49 @@ btn_video3.onclick = () => {
     directo.play();
     directo.poster=null;
 };
+
+//-- Función cronómetro 
+function chrono(){
+    setInterval(() =>{
+        if(!running){
+            return;
+        }
+
+        segundos++;
+        if(segundos < 10){
+            seconds.innerHTML="0"+segundos;
+
+        }else{
+            seconds.innerHTML=segundos;
+        }
+        if(segundos == 59){
+            segundos = -1;
+        }
+        if(segundos==0){
+            minutos++;
+        }
+        if(minutos < 10){
+            minutes.innerHTML="0"+minutos;
+
+        }else{
+            minutes.innerHTML=minutos;
+        }
+        if(minutos == 59){
+            minutos = -1;
+        }
+        if(minutos==0 && segundos==0){
+            horas++;
+        }
+        if(horas < 10){
+            hours.innerHTML="0"+horas;
+
+        }else{
+            hours.innerHTML=horas;
+        }
+
+    }, 1000)
+}
+
+window.addEventListener("load", () => {
+    chrono();
+})
