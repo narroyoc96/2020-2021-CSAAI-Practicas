@@ -9,7 +9,7 @@ h2{
     letter-spacing: 5px;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 50px;
-    color: rgb(255, 160, 215);
+    color: rgb(7, 37, 19);
 }
 #directo{
     margin-left: 475px;
@@ -56,4 +56,12 @@ input{
 #btn_src_on{
     margin-left: 500px;
     margin-top: 10px;
+}
+
+div {
+    margin-left: 630px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 160, 215);
 }
