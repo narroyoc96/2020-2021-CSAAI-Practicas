@@ -24,6 +24,8 @@ USOS CALCULADORA (MEJORAS):
 
 ¡Espero que te sea útil! :)
 
+ *Las matemáticas puras son, en su forma, la poesía de las ideas lógicas.*
+
 
 
 

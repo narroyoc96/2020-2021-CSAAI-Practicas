@@ -19,3 +19,5 @@ USO REALIZADOR DE TV (MEJORAS):
     -Añadido un cronómetro para que sepas el tiempo que llevas visualizando los videos. 
     
 ¡Espero que te guste! :)
+
+*La televisión es el espejo donde se refleja la derrota de todo nuestro sistema cultural.*

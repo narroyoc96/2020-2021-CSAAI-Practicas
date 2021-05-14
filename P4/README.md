@@ -23,3 +23,5 @@ USO IMAGEN MANIPULADA (MEJORAS):
     - ORIGINAL: Este botón hace que se vuelva a la imagen original seleccionada sin ningún tipo de filtro.
 
 ¡Y esto es todo! ¡Espero que te guste! :)
+
+*Los recuerdos son fotografías tomadas por el.*
