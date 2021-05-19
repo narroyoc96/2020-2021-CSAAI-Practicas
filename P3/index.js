@@ -12,9 +12,11 @@ var ballColor = 0;
 var ballColors = ["cyan", "#ff6347", "#ffff00", "#40e0d0", "#00ffff", "#ee82ee", "#ff7f50", "#ff69b4", "#808080", "red", "blue", "yellow", "pink", "green", "purple"]
 
 //variables audio
-var pongPaddle = new Audio ("P3_L9_pong-raqueta.mp3");
-var pongWalls = new Audio ("P3_L9_pong-rebote.mp3");
-var pongGoal = new Audio ("P3_L9_pong-tanto.mp3");
+var pongPaddle = new Audio ("pong-raqueta.mp3");
+var pongWalls = new Audio ("pong-rebote.mp3");
+var pongGoal = new Audio ("pong-tanto.mp3");
+var pongGameover = new Audio ("pong-gameover.mp3");
+var pongWin = new Audio ("pong-win.mp3");
 
 var paddleHeight = 10; //altura pala
 var paddleWidth = 70; //anchura pala
@@ -155,6 +157,7 @@ function collisionDetection() {
                     if(score == puntuationMax) {
                         alert("YOU WIN, CONGRATULATIONS!!");
                         document.location.reload(); //la funcion vuelve a cargar la pagina y el juego empieza de nuevo
+                        pongWin.play();
                     }
                 }
             }
@@ -247,7 +250,7 @@ function draw() {
             }
             else {
                 lives--;
-                pongGoal.play();
+                pongGameover.play();
                 if(!lives) {
                 alert("GAME OVER");
                 document.location.reload();
