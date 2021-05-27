@@ -16,7 +16,8 @@ USO REALIZADOR DE TV (ESPECIFICACIONES):
     *OJO: Los videos que aparecen en las cámaras están muteados, pero cuando aparecen en la pantalla en directo se activa el sonido.
 
 USO REALIZADOR DE TV (MEJORAS):
-    -Añadido un cronómetro para que sepas el tiempo que llevas visualizando los videos. 
+    -Añadido un cronómetro para que sepas el tiempo que llevas visualizando los videos.
+    - Añadido botón automático, una vez que las fuentes están encendidas, si se selecciona el botón automático, se reproducirán tres segundos de cada cámara automáticamente.
     
 ¡Espero que te guste! :)
 

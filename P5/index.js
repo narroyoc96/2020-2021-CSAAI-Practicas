@@ -9,6 +9,7 @@ const btn_video3 = document.getElementById("btn_video3");
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
+const btn_auto = document.getElementById("btn_auto");
 
 let running = false;
 
@@ -45,7 +46,7 @@ video3.poster = TEST_IMAGE_URL;
 btn_src_on.onclick = () => {
     running = true;
  
-  //-- Establecer la fuente de la cámara 1
+  //-- Establecer la fuente de la cámara 1, 2 y 3
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
   video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
   video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
@@ -135,6 +136,26 @@ btn_video3.onclick = () => {
     directo.play();
     directo.poster=null;
 };
+
+//-- Botón de automático
+btn_auto.onclick = () => {
+    console.log("Automático");
+    document.getElementById("btn_video1").disabled=true;
+    document.getElementById("btn_video2").disabled=true;
+    document.getElementById("btn_video3").disabled=true;
+    document.getElementById("btn_test").disabled=true;
+    btn_video1.onclick();
+    setTimeout(btn_video2.onclick, 3000);
+    setTimeout(btn_video3.onclick, 6000);
+    var repeat = setInterval(change, 9000);
+    var two;
+    var three;
+    function change() {
+      btn_video1.onclick();
+      two = setTimeout(btn_video2.onclick, 3000);
+      three = setTimeout(btn_video3.onclick, 6000);
+    }
+}
 
 //-- Función cronómetro 
 function chrono(){
