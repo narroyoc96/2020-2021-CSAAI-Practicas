@@ -18,6 +18,11 @@ var pongGoal = new Audio ("pong-tanto.mp3");
 var pongGameover = new Audio ("pong-gameover.mp3");
 var pongWin = new Audio ("pong-win.mp3");
 
+//variables titulo
+var speed = 85;
+var h1 = document.querySelector('h1');
+var delay = h1.innerHTML.length * speed + speed;
+
 var paddleHeight = 10; //altura pala
 var paddleWidth = 70; //anchura pala
 var paddleX = (canvas.width-paddleWidth)/2; //posicion pala
@@ -280,6 +285,23 @@ function draw() {
 
     requestAnimationFrame(draw)
 }
+function typeEffect(element, speed) {
+	var text = element.innerHTML;
+	element.innerHTML = "";
+	
+	var i = 0;
+	var timer = setInterval(function() {
+    if (i < text.length) {
+      element.append(text.charAt(i));
+      i++;
+    } else {
+      clearInterval(timer);
+    }
+  }, speed);
+}
+
+//afecta al titulo, lo pinta
+typeEffect(h1, speed);
 
 window.addEventListener("load", () => {
     chrono();
