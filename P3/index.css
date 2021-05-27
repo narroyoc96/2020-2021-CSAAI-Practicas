@@ -22,7 +22,7 @@ h1{
 }
 
 #table{
-    margin-left: 685px;
+    margin-left: 445px;
 }
 
 #centeralign {
@@ -52,13 +52,11 @@ button {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 30;
     font-size: 20px;
-    font-style: italic;
 }
 
 #start{
     margin-left: 670px;
 }
-
 
 /*Estilo para el cronómetro*/
 div {
