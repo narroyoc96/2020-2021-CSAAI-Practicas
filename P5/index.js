@@ -14,8 +14,12 @@ const btn_src_off = document.getElementById("btn_src_off");
 
 const btn_auto = document.getElementById("btn_auto");
 const btn_manual = document.getElementById("btn_manual");
+const btn_bucle = document.getElementById("btn_bucle");
 
 let running = false;
+
+//-- Variable bucle
+var start = 0;
 
 //-- Variables cronómetro
 var segundos = 0;
@@ -76,7 +80,7 @@ btn_src_on.onclick = () => {
 btn_src_off.onclick = () => {
     running = false;
 
-    //-- Establecer la fuente de la cámara 1
+    //-- Establecer la fuente de la cámara 1, 2 y 3
     video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
     video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
     video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
@@ -144,6 +148,10 @@ btn_video3.onclick = () => {
 //--Botón manual
 btn_manual.onclick = () => {
     console.log("Manual");
+    if (!running) {
+        return;
+    }
+
     clearTimeout(camara2);
     clearTimeout(camara3);
     clearInterval(repeat);
@@ -157,6 +165,10 @@ btn_manual.onclick = () => {
 //-- Botón de automático
 btn_auto.onclick = () => {
     console.log("Automático");
+    if (!running) {
+        return;
+    }
+
     btn_video1.disabled=true;
     btn_video2.disabled=true;
     btn_video3.disabled=true;
@@ -174,6 +186,15 @@ btn_auto.onclick = () => {
       camara3 = setTimeout(btn_video3.onclick, 6000);
     }
 }
+
+btn_bucle.onclick = () => {
+    console.log("Bucle");
+    start = directo.currentTime;
+    var loop = setInterval(restart, 2000);
+    function restart() {
+        directo.currentTime = start;
+    }
+};
 
 //-- Función cronómetro 
 function chrono(){
