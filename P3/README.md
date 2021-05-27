@@ -23,10 +23,12 @@ USOS VIDEOJUEGO (MEJORAS):
     - Destrucción de ladrillos
     - Pierdes vida
     - Rebote en la pala y en las paredes
+    - Cuando ganas y cuando pierdas
 
 2. La puntuación de cada eliminación de ladrillo es diferente. Los ladrillos de las posiciones más altas tienen mayor puntuación.
 3. Este juego contiene un cronómetro, así sabrás cuanto tardas en eliminar todos los ladrillos.
 4. La bola cambia de color cada vez que rebota en la pared, la pala y en los diferentes ladrillos.
+5. Según aumenta la eliminación de ladrillos aumenta la velocidad de la bola.
 
 ¡Espero que te diviertas! :)
 
