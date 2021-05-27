@@ -89,9 +89,6 @@ function keyDownHandler(e) {
         leftPressed = true;
     }
     else if(e.keyCode == 32) {
-        if(dx != 0 && dy != 0){
-            return;
-        }
         playing = true;
         dx = 2;
         dy = -2;
