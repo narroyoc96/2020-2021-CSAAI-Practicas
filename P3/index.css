@@ -3,7 +3,11 @@
 
 /*Estilo para el cuerpo*/
 body{
-    background-color: pink;
+    background-image: url(fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 20px;
 }
 
 /*Estilo para el canvas*/
