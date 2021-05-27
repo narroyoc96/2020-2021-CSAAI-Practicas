@@ -17,7 +17,9 @@ USO REALIZADOR DE TV (ESPECIFICACIONES):
 
 USO REALIZADOR DE TV (MEJORAS):
     -Añadido un cronómetro para que sepas el tiempo que llevas visualizando los videos.
-    - Añadido botón automático, una vez que las fuentes están encendidas, si se selecciona el botón automático, se reproducirán tres segundos de cada cámara automáticamente.
+    - Añadido botón automático, una vez que las fuentes están encendidas, si se selecciona el botón automático, se reproducirán tres segundos de cada cámara alternativamente.
+    - Añadido botón bucle, una vez selecciones la cámara que desees visualizar y pulsas botón bucle se reproduce en bucle dicha cámara.
+
     
 ¡Espero que te guste! :)
 
