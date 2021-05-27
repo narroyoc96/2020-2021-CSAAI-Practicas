@@ -34,6 +34,7 @@ for(i=0; i<calculos.length; i++){
       estado_log.push(estado);
       estado = ESTADO.OPERATION;
       console.log(estado, "opera");
+      sonido_teclas.play();
       
     }
   }
@@ -46,7 +47,7 @@ function digito(boton)
     estado_log.push(estado);
     estado = ESTADO.OP1;
     console.log(estado, "digito");
-    
+
   } else if (estado == ESTADO.OP1 || estado == ESTADO.OP2 || estado == ESTADO.OPERATION){
     display.innerHTML += boton;
     console.log(estado, "digito");
