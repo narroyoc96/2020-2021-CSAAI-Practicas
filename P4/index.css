@@ -1,6 +1,9 @@
 
 body {
-    background-color:lemonchiffon;
+    background-image: url(fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #cuerpo{
@@ -14,26 +17,26 @@ body {
 
 #izq{
     float: left;
-    font-family: fantasy;
-    text-decoration: underline;
-    font-weight: 10;
-    font-size: 25px;
     font-style: normal;
+    color: lightskyblue;
     text-align: center;
-    color: rgb(28, 98, 160);
+    font-family: fantasy;
+    font-weight: bold; 
+    font-size: 30px; 
+    text-shadow: -1px 0 lightslategrey, 0 1px lightslategrey, 1px 0 lightslategrey, 0 -1px lightslategrey;
+   
 }
 
 #der{
     float: right;
-    font-family: fantasy;
-    text-decoration: underline;
-    font-weight: 10;
-    font-size: 25px;
     font-style: normal;
+    color: lightskyblue;
     text-align: center;
-    color: rgb(28, 98, 160);
+    font-family: fantasy; 
+    font-weight: bold; 
+    font-size: 30px; 
+    text-shadow: -1px 0 lightslategrey, 0 1px lightslategrey, 1px 0 lightslategrey, 0 -1px lightslategrey;
 }
-
 
 #imagen_1{
     margin-left: 450px;
