@@ -3,13 +3,17 @@ let directo = document.getElementById("directo");
 const video1 = document.getElementById("video1");
 const video2 = document.getElementById("video2");
 const video3 = document.getElementById("video3")
+
 const btn_video1 = document.getElementById("btn_video1");
 const btn_video2 = document.getElementById("btn_video2");
 const btn_video3 = document.getElementById("btn_video3");
+
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
 const btn_src_off = document.getElementById("btn_src_off");
+
 const btn_auto = document.getElementById("btn_auto");
+const btn_manual = document.getElementById("btn_manual");
 
 let running = false;
 
@@ -137,23 +141,37 @@ btn_video3.onclick = () => {
     directo.poster=null;
 };
 
+//--Botón manual
+btn_manual.onclick = () => {
+    console.log("Manual");
+    clearTimeout(camara2);
+    clearTimeout(camara3);
+    clearInterval(repeat);
+    
+    btn_video1.disabled=false;
+    btn_video2.disabled=false;
+    btn_video3.disabled=false;
+    btn_test.disabled=false;
+}
+
 //-- Botón de automático
 btn_auto.onclick = () => {
     console.log("Automático");
-    document.getElementById("btn_video1").disabled=true;
-    document.getElementById("btn_video2").disabled=true;
-    document.getElementById("btn_video3").disabled=true;
-    document.getElementById("btn_test").disabled=true;
+    btn_video1.disabled=true;
+    btn_video2.disabled=true;
+    btn_video3.disabled=true;
+    btn_test.disabled=true;
+
     btn_video1.onclick();
     setTimeout(btn_video2.onclick, 3000);
     setTimeout(btn_video3.onclick, 6000);
     var repeat = setInterval(change, 9000);
-    var two;
-    var three;
+    var camara2;
+    var camara3;
     function change() {
       btn_video1.onclick();
-      two = setTimeout(btn_video2.onclick, 3000);
-      three = setTimeout(btn_video3.onclick, 6000);
+      camara2 = setTimeout(btn_video2.onclick, 3000);
+      camara3 = setTimeout(btn_video3.onclick, 6000);
     }
 }
 
