@@ -33,10 +33,13 @@ var hours = document.getElementById("horas");
 //-- Establecer las dimensiones de los vídeos
 directo.width=420;
 directo.height=200;
+
 video1.width=200;  
 video1.height=100;
+
 video2.width=200;  
 video2.height=100;
+
 video3.width=200;  
 video3.height=100;
 
@@ -87,12 +90,9 @@ btn_src_off.onclick = () => {
 
     //-- Reproducimos un vídeo, desde el comienzo
     video1.currentTime = 0;
-    //video1.any();
     video2.currentTime = 0;
-    //video2.any();
     video3.currentTime = 0;
     directo.currentTime = 0;
-    //directo.any();
 
     //-- Y en silencio...
     video1.muted;
@@ -108,12 +108,15 @@ btn_src_off.onclick = () => {
 
 //-- Botón de Test
 btn_test.onclick = () => {
+    console.log("Imagen test");
+    running = false;
     directo.poster = TEST_IMAGE_URL;
     directo.src = '';
 };
 
 //-- Botón de Selección de la cámara 1
 btn_video1.onclick = () => {
+    console.log("Cámara 1");
     if (!running) {
         return;
     }
@@ -125,6 +128,7 @@ btn_video1.onclick = () => {
 
 //-- Botón de Selección de la cámara 2
 btn_video2.onclick = () => {
+    console.log("Cámara 2");
     if (!running) {
         return;
     }
@@ -136,6 +140,7 @@ btn_video2.onclick = () => {
 
 //-- Botón de Selección de la cámara 3
 btn_video3.onclick = () => {
+    console.log("Cámara 3");
     if (!running) {
     return;
     }
@@ -148,9 +153,7 @@ btn_video3.onclick = () => {
 //--Botón manual
 btn_manual.onclick = () => {
     console.log("Manual");
-    if (!running) {
-        return;
-    }
+    running = false;
 
     clearTimeout(camara2);
     clearTimeout(camara3);
@@ -165,9 +168,7 @@ btn_manual.onclick = () => {
 //-- Botón de automático
 btn_auto.onclick = () => {
     console.log("Automático");
-    if (!running) {
-        return;
-    }
+    running = true;
 
     btn_video1.disabled=true;
     btn_video2.disabled=true;
@@ -189,8 +190,9 @@ btn_auto.onclick = () => {
 
 btn_bucle.onclick = () => {
     console.log("Bucle");
+    running = true;
     start = directo.currentTime;
-    var loop = setInterval(restart, 2000);
+    var loop = setInterval(restart, 3000);
     function restart() {
         directo.currentTime = start;
     }
