@@ -152,6 +152,8 @@ function collisionDetection() {
             if(b.status == 1) {
                 if(x+ballRadius > b.x && x+ballRadius < b.x+brickWidth && y+ballRadius > b.y && y+ballRadius < b.y+brickHeight) {
                     dy = -dy;
+                    dy = dy + 1;
+                    dx = dx + 1;
                     ballColor = (ballColor+1 <= ballColors.length)? ballColor+1: 0;
                     pongWalls.play(); 
                     b.status = 0;
@@ -222,6 +224,7 @@ function chrono(){
 
     }, 1000)
 }
+
 //funcion para dibujar dentro del canvas
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
