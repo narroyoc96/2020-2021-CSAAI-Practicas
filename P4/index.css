@@ -7,16 +7,16 @@ body {
 }
 
 #cuerpo{
-    width: 900px;
-    margin: 0 auto;
-    padding-top: 15px;
-    padding-bottom: 100px;
-    padding-left: 35px;
-    padding-right: 35px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap; /*juntar imagenes*/
+    width: 100%;
 }
 
 #izq{
-    float: left;
+    float: center;
+    width: 50%;
     font-style: normal;
     color: lightskyblue;
     text-align: center;
@@ -28,7 +28,8 @@ body {
 }
 
 #der{
-    float: right;
+    float: center;
+    width: 50%;
     font-style: normal;
     color: lightskyblue;
     text-align: center;
