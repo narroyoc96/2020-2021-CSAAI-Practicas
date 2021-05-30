@@ -20,6 +20,7 @@ h1{
     color: transparent; 
     text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
+
 /*Estilo Calculadora*/
 .calculadora{
     margin-left: auto;
@@ -55,6 +56,10 @@ button{
     border-style: ridge;
     border-radius: 10px;
     font-family: 'Orbitron', bol
+}
+
+button:hover{
+    background-color: blanchedalmond;
 }
 
 /*Estilo display*/
