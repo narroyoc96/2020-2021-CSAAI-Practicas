@@ -48,6 +48,11 @@ input{
     font-style: normal;
 }
 
+input:hover{
+    background-color: rgb(210, 181, 212);
+    color: black;
+}
+
 #btn_video1{
     margin-left: 490px;
     margin-top: 5px;
