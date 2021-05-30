@@ -12,6 +12,7 @@ body {
     align-items: center;
     flex-wrap: wrap; /*juntar imagenes*/
     width: 100%;
+    overflow: hidden;
 }
 
 #izq{

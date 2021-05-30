@@ -21,6 +21,7 @@ USO IMAGEN MANIPULADA (MEJORAS):
     - SEPIA: La imagen manipulada es color sepia.
     - BOCA ABAJO: La imagen original es invertida.
     - ORIGINAL: Este botón hace que se vuelva a la imagen original seleccionada sin ningún tipo de filtro.
+3. Adaptado para visualizarlo en cualquier pantalla en horizontal.
 
 ¡Y esto es todo! ¡Espero que te guste! :)
 
