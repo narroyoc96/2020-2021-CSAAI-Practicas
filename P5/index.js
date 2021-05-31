@@ -155,14 +155,20 @@ btn_manual.onclick = () => {
     console.log("Manual");
     running = false;
 
-    clearTimeout(camara2);
-    clearTimeout(camara3);
-    clearInterval(repeat);
-    
-    btn_video1.disabled=false;
-    btn_video2.disabled=false;
-    btn_video3.disabled=false;
-    btn_test.disabled=false;
+    directo.src = TEST_IMAGE_URL;
+    video1.src = TEST_IMAGE_URL;
+    video2.src = TEST_IMAGE_URL;
+    video3.src = TEST_IMAGE_URL;
+    btn_src_on.disabled = false;
+    btn_src_off.disabled = false;
+    btn_video1.disabled = false;
+    btn_video2.disabled = false;
+    btn_video3.disabled = false;
+    btn_test.disabled = false;
+    video1.disable = false;
+    video2.disable = false;
+    video3.disable = false;
+
 }
 
 //-- Botón de automático
@@ -174,6 +180,7 @@ btn_auto.onclick = () => {
     btn_video2.disabled=true;
     btn_video3.disabled=true;
     btn_test.disabled=true;
+    btn_src_on.disabled=true;
 
     btn_video1.onclick();
     setTimeout(btn_video2.onclick, 3000);
