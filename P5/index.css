@@ -21,13 +21,14 @@ h2{
     color: transparent;
     text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 }
+
 #directo{
-    margin-left: 545px;
+    margin-left: 480px;
     margin-top: 10px;
 }
 
 #video1{
-    margin-left: 450px;
+    margin-left: 380px;
     margin-top: 10px;
 }
 
@@ -54,7 +55,7 @@ input:hover{
 }
 
 #btn_video1{
-    margin-left: 490px;
+    margin-left: 430px;
     margin-top: 5px;
 }
 
@@ -69,16 +70,16 @@ input:hover{
 }
 
 #btn_src_on{
-    margin-left: 580px;
+    margin-left: 500px;
     margin-top: 10px;
 }
 
 #btn_auto{
-    margin-left: 610px;
+    margin-left: 530px;
     margin-top: 10px;
 }
 div {
-    margin-left: 700px;
+    margin-left: 630px;
     margin-top: 10px;
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
